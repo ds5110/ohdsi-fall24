@@ -7,6 +7,7 @@
 
 - Alex Corcoran (lead)
 - Sally Johnstone
+- Jaee Oh
   <br>
 
 ### Stakeholder

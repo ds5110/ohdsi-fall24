@@ -15,7 +15,17 @@
 
 ### Responsibilities
 
+- Alex - <br>
+- Sally - <br>
+- Jaee - <br>
+  <br>
+
 ### Task Assignments
+
+- Alex - <br>
+- Sally - <br>
+- Jaee - <br>
+  <br>
 
 ### Project Goal
 

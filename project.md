@@ -22,5 +22,5 @@
   - I am interested in understanding both where stroke survivors receive care (e.g, inpatient rehabilitation, skilled nursing facilities) and what care is received (how often do stroke survivors see certain physician specialists like neurologists, physical medicine and rehabilitation doctors, cardiologists) and rehabilitation providers (physical therapists, occupational therapists, and speech-language pathologists).
 
 ### Data Sources
-
+- [OHDSI Lab] (https://northeastern.sharepoint.com/sites/OHDSINortheastern)
 - [Link](https://northeastern.sharepoint.com/sites/OHDSINortheastern/Shared%20Documents/Forms/AllItems.aspx?ga=1&OR=Teams%2DHL&CT=1728075445537&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI1MC8yNDA4MTcwMDQyMSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D&id=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FUser%20Guide%2FLatest&viewid=e9534233%2D4089%2D42ed%2D8956%2D298feac7e723) to OHDSI's User Guide to access database:

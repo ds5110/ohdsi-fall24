@@ -58,8 +58,7 @@ Three prioritized goals for the project...
   4. [ ] Fill out proposal.md
 
 - **Week 7** &nbsp; &nbsp; 10/14 - 10/20
-  1. [ ] EDA Due?
-  2. [ ] Meet on Saturday from 12pm - 2pm (online)
+  1. [ ] Meet on Saturday from 12pm - 2pm (online)
 - **Week 8** &nbsp; &nbsp; 10/21 - 10/27 &nbsp; &nbsp; &nbsp; **EDA Due?**
   1. [ ] Meet on Saturday from 12pm - 2pm (online)
 - **Week 9** &nbsp; &nbsp; 10/28 - 11/3 &nbsp; &nbsp; &nbsp; **Proposal Due?**

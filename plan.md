@@ -57,12 +57,12 @@ Three prioritized goals for the project...
   3. [ ] Fill out plan.md (Roles & responsibilities, Task assignments, Timeline, etc)
   4. [ ] Fill out proposal.md
 
-- **Week 7** &nbsp; &nbsp; 10/14 - 10/20 &nbsp; &nbsp; &nbsp; **EDA Due?**
+- **Week 7** &nbsp; &nbsp; 10/14 - 10/20
   1. [ ] EDA Due?
   2. [ ] Meet on Saturday from 12pm - 2pm (online)
-- **Week 8** &nbsp; &nbsp; 10/21 - 10/27 &nbsp; &nbsp; &nbsp; **Proposal Due**
+- **Week 8** &nbsp; &nbsp; 10/21 - 10/27 &nbsp; &nbsp; &nbsp; **EDA Due?**
   1. [ ] Meet on Saturday from 12pm - 2pm (online)
-- **Week 9** &nbsp; &nbsp; 10/28 - 11/3
+- **Week 9** &nbsp; &nbsp; 10/28 - 11/3 &nbsp; &nbsp; &nbsp; **Proposal Due?**
   1. [ ] Meet on Saturday from 12pm - 2pm (online)
 - **Week 10** &nbsp; &nbsp; 11/4 - 11/10 &nbsp; &nbsp; &nbsp; **Checkin**
   1. [ ] Meet on Saturday from 12pm - 2pm (online)

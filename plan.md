@@ -20,13 +20,6 @@
 - Jaee -
   <br>
 
-### Task Assignments
-
-- Alex - to do
-- Sally - to do
-- Jaee - to do
-  <br>
-
 ### Project Goal
 
 (general goal insert here)

@@ -8,23 +8,23 @@
 
 ### Team Roles
 
-- Alex Corcoran (lead) - UI/Ux
+- Alex Corcoran (lead) - UI/UX
 - Sally Johnstone - PM
 - Jaee Oh - Data Analyst
   <br>
 
 ### Responsibilities
 
-- Alex - UI/Ux
-- Sally - PM
-- Jaee - Data Analyst
+- Alex -
+- Sally -
+- Jaee -
   <br>
 
 ### Task Assignments
 
-- Alex - <br>
-- Sally - <br>
-- Jaee - <br>
+- Alex - to do
+- Sally - to do
+- Jaee - to do
   <br>
 
 ### Project Goal
@@ -34,7 +34,7 @@
 Three prioritized goals for the project...
 
 - v0.1: Identify unique paths/cohorts
-- v0.2: Build out algorithm
+- v0.2: Build in algorithm
 - v0.3: Have a form to pick out different factors
 
 ## Timeline
@@ -43,34 +43,52 @@ Three prioritized goals for the project...
 
 - **Week 5** &nbsp; &nbsp; 9/30 - 10/6 &nbsp; &nbsp; &nbsp; **Repo Link Due**
 
-  1. [ ] Do the tutorials and get access to the database <br>
-         &nbsp; &nbsp; &nbsp;- [X] Alex <br>
-         &nbsp; &nbsp; &nbsp;- [X] Sally <br>
-         &nbsp; &nbsp; &nbsp;- [X] Jaee <br>
+  1. [x] Do the tutorials and get access to the database <br>
+         &nbsp; &nbsp; &nbsp;- [x] Alex <br>
+         &nbsp; &nbsp; &nbsp;- [x] Sally <br>
+         &nbsp; &nbsp; &nbsp;- [x] Jaee <br>
 
   2. [x] Submit Repo link on Canvas
 
 - **Week 6** &nbsp; &nbsp; 10/7 - 10/13
 
-  1. [ ] Figure out and solidify our Project Goal?
-  2. [ ] Meet on Saturday from 12pm - 2pm (online)
-  3. [ ] Fill out plan.md (Roles & responsibilities, Task assignments, Timeline, etc)
-  4. [ ] Fill out proposal.md
+  1. [x] Get access to the database
 
 - **Week 7** &nbsp; &nbsp; 10/14 - 10/20
-  1. [ ] Meet on Saturday from 12pm - 2pm (online)
+  1. [x] Meet on Saturday from 12pm - 2pm (online)
+  2. [x] Set up the database, discuss goals, EDA outline
+         <br>
+         <br>
 - **Week 8** &nbsp; &nbsp; 10/21 - 10/27 &nbsp; &nbsp; &nbsp; **EDA Due**
-  1. [ ] Meet on Saturday from 12pm - 2pm (online)
+  1. [ ] Sally send Rob goal outline
+  2. [ ] Monday meeting @ 4pm
+  3. [ ] Meet before class on Thursday @ 5pm to go over paths
+  4. [ ] Meet on Saturday from 12pm - 2pm. Work on EDA.
+  5. [ ] Submit EDA assignment
+         <br>
+         <br>
 - **Week 9** &nbsp; &nbsp; 10/28 - 11/3 &nbsp; &nbsp; &nbsp; **Proposal Due**
   1. [ ] Meet on Saturday from 12pm - 2pm (online)
+         <br>
+         <br>
 - **Week 10** &nbsp; &nbsp; 11/4 - 11/10 &nbsp; &nbsp; &nbsp; **Checkin**
   1. [ ] Meet on Saturday from 12pm - 2pm (online)
+         <br>
+         <br>
 - **Week 11** &nbsp; &nbsp; 11/11 - 11/17
   1. [ ] Meet on Saturday from 12pm - 2pm (online)
+         <br>
+         <br>
 - **Week 12** &nbsp; &nbsp; 11/18 - 11/24
   1. [ ] Meet on Saturday from 12pm - 2pm (online)
+         <br>
+         <br>
 - **Week 13** &nbsp; &nbsp; 11/25 - 12/1 &nbsp; &nbsp; &nbsp; **Prototype Due**
   1. [ ] Meet on Saturday from 12pm - 2pm (online)
+         <br>
+         <br>
 - **Week 14** &nbsp; &nbsp; 12/2 - 12/8 &nbsp; &nbsp; &nbsp; **Presentation**
   1. [ ] Meet on Saturday from 12pm - 2pm (online)
+         <br>
+         <br>
 - **Week 15** &nbsp; &nbsp; 12/9 - 12/6 &nbsp; &nbsp; &nbsp; **Final Submission**

@@ -53,22 +53,23 @@ Three prioritized goals for the project...
          <br>
          <br>
 - **Week 8** &nbsp; &nbsp; 10/21 - 10/27 &nbsp; &nbsp; &nbsp; **EDA Due**
-  1. [ ] Sally send Rob goal outline
-  2. [ ] Monday meeting @ 4pm
-  3. [ ] Meet before class on Thursday @ 5pm to go over paths
+  1. [x] Sally send Rob goal outline
+  2. [x] Monday meeting @ 4pm
+  3. [ ] Meet before class on Thursday @ 4:30pm to go cohort with Casey and work on EDA
   4. [ ] Meet on Saturday from 12pm - 2pm. Work on EDA.
   5. [ ] Submit EDA assignment
          <br>
          <br>
-- **Week 9** &nbsp; &nbsp; 10/28 - 11/3 &nbsp; &nbsp; &nbsp; **Proposal Due**
+- **Week 9** &nbsp; &nbsp; 10/28 - 11/3 &nbsp; &nbsp; &nbsp; **EDA Due**
+  1. [ ] EDA due Tuesday - Submit
+  2. [ ] Meet on Saturday from 12pm - 2pm (online)
+         <br>
+         <br>
+- **Week 10** &nbsp; &nbsp; 11/4 - 11/10 &nbsp; &nbsp; &nbsp; **Proposal Due**
   1. [ ] Meet on Saturday from 12pm - 2pm (online)
          <br>
          <br>
-- **Week 10** &nbsp; &nbsp; 11/4 - 11/10 &nbsp; &nbsp; &nbsp; **Checkin**
-  1. [ ] Meet on Saturday from 12pm - 2pm (online)
-         <br>
-         <br>
-- **Week 11** &nbsp; &nbsp; 11/11 - 11/17
+- **Week 11** &nbsp; &nbsp; 11/11 - 11/17 &nbsp; &nbsp; &nbsp; **Checkin**
   1. [ ] Meet on Saturday from 12pm - 2pm (online)
          <br>
          <br>

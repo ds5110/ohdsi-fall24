@@ -61,7 +61,7 @@ Three prioritized goals for the project...
          <br>
          <br>
 - **Week 9** &nbsp; &nbsp; 10/28 - 11/3 &nbsp; &nbsp; &nbsp; **EDA Due**
-  1. [ ] EDA due Tuesday - Submit
+  1. [ ] EDA due Tuesday 10/29 - Submit
   2. [ ] Meet on Saturday from 12pm - 2pm (online)
          <br>
          <br>

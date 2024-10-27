@@ -47,5 +47,7 @@ Note that further investigations may find that the following additional, low inc
 * Comprehensive Inpatient Rehabiloitation Facility
 
 Additional path parameters to include:
-Medication
-Type of therapy (physical, occupational, speech alone and in various combinations)
+* Medication
+* Type of therapy (physical, occupational, speech alone and in various combinations)
+* Location of therapy (care therapy, office, or home)
+* Duration of therapy (measured in visits); we may or may not break this into groups of longer term vs. shorter term 

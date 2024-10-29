@@ -13,9 +13,10 @@
 * DO NOT put your credentials directly to your source codes. You don't want your password to be pushed on your public git repository.
 * Instead, use [configparser](https://docs.python.org/3/library/configparser.html) package. This package is already installed with Miniconda as an default package.
 * Create a file named 'config.ini' on your directory.
+  * You MUST put this file on your .gitignore first, so it will never be pushed to your git repository.
   * The credentials that you got from the email when you created the workspace will be used here.
   * The [JDBC url](https://docs.aws.amazon.com/redshift/latest/mgmt/jdbc20-obtain-url.html) is formatted in following format: jdbc:redshift://endpoint:port/database
-  * Put your redshift username/password and info. from the JDBC url to put following content into 'config.ini':
+  * Put your redshift username/password and information from the JDBC url to put following content into 'config.ini':
 ```
 [redshift]
 host=<endpoint>
@@ -83,7 +84,7 @@ conda install conda-forge::pandas
 
 
 * Unfortunately, redshift_connector does not support a data structure that can be used on pandas.read_sql(). We have to use .cursor() and .execute() to create a pandas dataframe using the tables from the database.
-* Use pandas to create DataFrame object:
+* Use pandas to create a DataFrame object:
 
 ```
 import configparser

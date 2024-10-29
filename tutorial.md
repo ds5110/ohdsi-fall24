@@ -40,7 +40,7 @@ conda install -c conda-forge redshift_connector
 import configparser
 import redshift_connector
 
-# Read the config file
+# Read the config.ini file.
 config = configparser.ConfigParser()
 config.read('config.ini')
 
@@ -53,23 +53,23 @@ con = redshift_connector.connect(
     password=config['redshift']['password']
 )
 
-# Create a cursor
+# Create a cursor.
 cursor = con.cursor()
 
-# Execute a query
+# Execute a query.
 query = '''
 SELECT * 
 FROM schema.table_name
-LIMT 5;
+LIMIT 5;
 '''
 cursor.execute(query)
 results = cursor.fetchall()
 
-# Print the results
+# Print the results.
 print(results)
 
-# Close the connection
-conn.close()
+# Close the connection.
+con.close()
 
 
 ```
@@ -90,11 +90,11 @@ import configparser
 import redshift_connector
 import pandas as pd
 
-# Read the config file
+# Read the config.ini file.
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-# Connect to Redshift
+# Connect to Redshift.
 con = redshift_connector.connect(
     host=config['redshift']['host'],
     database=config['redshift']['database'],
@@ -103,20 +103,22 @@ con = redshift_connector.connect(
     password=config['redshift']['password']
 )
 
-# Create a cursor
+# Create a cursor.
 cursor = con.cursor()
 
-# Execute a query
+# Execute a query.
 query = '''
 SELECT * 
 FROM schema.table_name
-LIMT 5;
+LIMIT 5;
 '''
 cursor.execute(query)
+
+# Create a Pandas dataframe.
 pd.DataFrame = cursor.fetch_dataframe()
 
-# Close the connection
-conn.close()
+# Close the connection.
+con.close()
 
 
 ```

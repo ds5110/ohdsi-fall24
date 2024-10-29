@@ -95,7 +95,6 @@ conda install conda-forge::pandas
 ```
 import pandas as pd
 
-
 # Create a Pandas dataframe.
 df: pd.DataFrame = cursor.fetch_dataframe()
 ```

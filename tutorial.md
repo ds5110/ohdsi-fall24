@@ -90,13 +90,13 @@ conda install conda-forge::pandas
 
 
 * Unfortunately, redshift_connector does not support a data structure that can be used on pandas.read_sql(). We have to use .cursor() and .execute() to create a pandas dataframe using the tables from the database.
-* Use pandas.DataFrame and cursor.fetch_dataframe() to create a DataFrame object:
+* Use cursor.fetch_dataframe() to create a DataFrame object:
 
 ```
 import pandas as pd
 
 # Create a Pandas dataframe.
-df: pd.DataFrame = cursor.fetch_dataframe()
+df = cursor.fetch_dataframe()
 ```
 * Now you have a Pandas dataframe object that can be used as if any other Pandas dataframe.
 * You can find more details about [the redshift_connector API](https://docs.aws.amazon.com/redshift/latest/mgmt/python-api-reference.html).

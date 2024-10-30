@@ -2,7 +2,7 @@
 
 # Note that currently we do not have access to our AWS workspaces (though we have been able to access the AWS previously) so we have indicated where data and images will be inserted once that problem is resolved:
 
-Our project will establish stroke patient ‘paths’ through treatment, to further disaggregate the initial cohort definition that captures first-occurance in-patient and emergency department stroke diagnosis. We will focus our path on physical location of patients while receiving treatment, and indication of whether they have received physical/occupational and/or speech therapy. THe objective is to create defined paths that will support future research on the efficacy of different treatment processes, timing, and duration.
+Our project will establish stroke patient ‘paths’ through treatment, to further disaggregate the initial cohort definition that captures first-occurance in-patient and emergency department stroke diagnosis. We will focus our path on physical location of patients while receiving treatment, and indication of whether they have received physical/occupational and/or speech therapy. The objective is to create defined paths that will support future research on the efficacy of different treatment processes, timing, and duration.
 
 Our cohort definition is based on a SQL query developed by Casey Tilton, a capstone student also working with the OHDSI database on questions around stoke victims. We plan to review and refine Casey’s script; his original SQL code is stored here: docs/Stroke_cohort.md
 

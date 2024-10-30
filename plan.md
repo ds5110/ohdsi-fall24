@@ -22,13 +22,7 @@
 
 ### Project Goal
 
-(general goal insert here)
-
-Three prioritized goals for the project...
-
-- v0.1: Identify unique paths/cohorts
-- v0.2: Build in algorithm
-- v0.3: Have a form to pick out different factors
+Our project will establish stroke patient ‘paths’ through treatment, to further disaggregate the initial cohort definition that captures first-occurance in-patient and emergency department stroke diagnosis. We will focus our path on physical location of patients while receiving treatment, and indication of whether they have received physical/occupational and/or speech therapy. The objective is to create defined paths that will support future research on the efficacy of different treatment processes, timing, and duration.
 
 ## Timeline
 
@@ -55,13 +49,13 @@ Three prioritized goals for the project...
 - **Week 8** &nbsp; &nbsp; 10/21 - 10/27 &nbsp; &nbsp; &nbsp; **EDA Due**
   1. [x] Sally send Rob goal outline
   2. [x] Monday meeting @ 4pm
-  3. [ ] Meet before class on Thursday @ 4:30pm to go cohort with Casey and work on EDA
-  4. [ ] Meet on Saturday from 12pm - 2pm. Work on EDA.
-  5. [ ] Submit EDA assignment
+  3. [x] Meet before class on Thursday @ 4:30pm to go cohort with Casey and work on EDA
+  4. [x] Meet on Saturday from 12pm - 2pm. Work on EDA.
+  5. [x] Submit EDA assignment
          <br>
          <br>
 - **Week 9** &nbsp; &nbsp; 10/28 - 11/3 &nbsp; &nbsp; &nbsp; **EDA Due**
-  1. [ ] EDA due Tuesday 10/29 - Submit
+  1. [x] EDA due Tuesday 10/29 - Submit
   2. [ ] Meet on Saturday from 12pm - 2pm (online)
          <br>
          <br>

@@ -14,7 +14,66 @@
 ## Installation of Miniconda
 * Download [Miniconda installer](https://docs.anaconda.com/miniconda/miniconda-other-installer-links/) for Windows.
 * Follow the [instructions](https://docs.anaconda.com/miniconda/miniconda-install/) to install miniconda.
-* You must use anaconda powershell promt to run python, not Window's default powershell or cmd.
+* You must use Anaconda PowerShell Prompt to run python, not Window's default powershell or cmd.
+
+## Setup your python environment
+* You can use Notepad++, [VScode](https://code.visualstudio.com/) or any other tool you like to write your python scripts.
+* Following commands are all supposed to be ran on Anaconda PowerShell Prompt.
+* Check your channels with following command:
+```
+conda config --show channels
+```
+* [conda-forge](https://conda-forge.org/) is very useful when installing different python packages. Add it to your channel:
+```
+conda config --add channels conda-forge
+```
+
+## Setup your git environment
+* You need git to use github. Read [tutorials for git](https://www.atlassian.com/git) if you don't have any experience with it. Install [git](https://anaconda.org/conda-forge/git) package with following commad:
+```
+conda install conda-forge::git
+```
+
+
+* To use git more easily, you need to generate an SSH. Install [openssh](https://anaconda.org/conda-forge/openssh) with following command:
+```
+conda install conda-forge::openssh
+```
+
+* Use following command to generate a ssh key:
+```
+ssh-keygen
+```
+
+* You will now have '.ssh' directory on your home (D:\Users\your_name\.ssh). Open copy the content of 'id_ed25519.pub' in the directory, and paste it to your github SSH keys (Setting - SSH and GPG keys - New SSH Keys).
+
+* Add your ssh key to the ssh-agent. You need to open windowns powershell as an administrator. Use following [commands](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent):
+```
+Get-Service -Name ssh-agent | Set-Service -StartupType Manual
+Start-Service ssh-agent
+
+ssh-add D:/Users/your_name/.ssh/id_ed25519
+```
+
+* Set your user name and email by following command:
+```
+git config --global user.email your_name@email.com
+git config --global user.name your_name
+```
+
+## Setup make
+* [Make](https://www.gnu.org/software/make/manual/make.html) is a useful tool regarding reproducibility. Install [make](https://anaconda.org/conda-forge/make/) pckage with following command:
+```
+conda install conda-forge::make
+```
+
+* Create 'Makefile' on a directory where you want to use the make command. Following command in 'Makefile' is an example of running a python script 'src/example.py' with a command 'make example':
+```
+example:
+	python -B src/example.py
+```
+
+
 
 ## Configuration of your Redshift credentials on python
 * DO NOT put your credentials directly to your source codes. You don't want your password to be pushed on your public git repository.
@@ -83,11 +142,12 @@ con.close()
 * port variable in redshift_connector.connect() needs to be an integer.
 
 ## Use Pandas to process tables read from the Redshift database
-* [Install pandas](https://anaconda.org/conda-forge/pandas) package if you haven't done so yet:
-```
-conda install conda-forge::pandas
-```
 
+
+* Install [pandas](https://anaconda.org/conda-forge/pandas) package with following command:
+```
+conda install pandas
+```
 
 * Unfortunately, redshift_connector does not support a data structure that can be used on pandas.read_sql(). We have to use .cursor() and .execute() to create a pandas dataframe using the tables from the database.
 * Use cursor.fetch_dataframe() to create a DataFrame object:
@@ -102,14 +162,30 @@ df = cursor.fetch_dataframe()
 * You can find more details about [the redshift_connector API](https://docs.aws.amazon.com/redshift/latest/mgmt/python-api-reference.html).
 
 ## Write processed dataframe into your schema
-* [Create table](https://www.w3schools.com/sql/sql_create_table.asp) using SQL command.
-* Use cursor.write_dataframe(df, table) to save processed dataframe df, into the table created on your schema. Your column should match the table.
+* [Create table](https://www.w3schools.com/sql/sql_create_table.asp) using SQL command and cursor.execute() method.
+```
+cursor.execute("CREATE TABLE your_schema.your_table(col_ID int, col_name varchar);")
+```
+* Use cursor.write_dataframe(df, table) method to save processed dataframe df, into the table created on your schema. Your column should match the table.
+```
+cursor.write_dataframe(df, "your_schema.yourtable")
+```
 * Check if you can read the written table properly.
 
 ```
-cursor.execute("CREATE TABLE your_schema.your_table(col_ID int, col_name varchar);")
-cursor.write_dataframe(df, "your_schema.yourtable")
 cursor.execute("SELECT * FROM your_schema.yourtable")
 result = cursor.fetchall()
-print(result)
+```
+* If you want the changes in the python script to be updated to the database, you have to use .commit() method. If you don't use this command, all of the changes done in the python script will not be updated to the database:
+```
+redshift_connector.connection.commit()
+```
+* If you want to autocommit your changes, you can use [.autocommit](https://docs.aws.amazon.com/redshift/latest/mgmt/python-connect-examples.html) method.
+```
+# Run a rollback
+con.rollback()
+# Turn on autocommit
+con.autocommit = True
+# Turn off autocommit
+con.autocommit = False
 ```

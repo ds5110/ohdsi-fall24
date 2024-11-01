@@ -38,6 +38,10 @@ print(f"Executed query: \n {query}")
 df = cursor.fetch_dataframe()
 print(df.head())
 
+# -----------------------------------------------------------
+# Process df in here.
+# -----------------------------------------------------------
+
 # Write the pandas dataframe to a table in your schema. Table must already exists.
 table_name_work = "test_new_table"
 cursor.write_dataframe(df, f"{work_schema}.{table_name_work}")

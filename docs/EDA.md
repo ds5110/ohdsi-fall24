@@ -65,7 +65,7 @@ Our project will establish stroke patient ‘paths’ through treatment, to furt
 
 Our cohort definition is based on a SQL query developed by Casey Tilton, a capstone student also working with the OHDSI database on questions around stoke victims. We plan to review and refine Casey’s script; his original SQL code is stored here: docs/Stroke_cohort.md
 
-### Population (N) = 67,000
+**Population (N) = 67,000**
 
 (N may change as we refine the cohort definition)
 
@@ -137,4 +137,4 @@ TABLE 3: Summary statistics (mean, median, STD DEV, max, min, quartiles) of tota
 
 **Our edited version of the ER diagram based on the current Cohort Query used:**
 
-<img src="img/cohort_er_diagram.png" width=400>
+<img src="img/cohort_er_diagram.png" width=500>

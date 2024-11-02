@@ -76,7 +76,7 @@ TABLES 1 and 2: Summary statistics (mean, median, STD DEV, max, min, quartiles) 
 
 Hypothesis: The first 'cut' will be to divide N by type of stroke dianosis rather than the first actual activity related to the patient, as the category of stroke is a more important demarcation than the type of each initial visit.
 
-### The Stroke Diagnosis Categories Are:
+**The Stroke Diagnosis Categories Are:**
 
 <img src="img/stroke_ids.png" width=300>
 <br>
@@ -84,7 +84,7 @@ Hypothesis: The first 'cut' will be to divide N by type of stroke dianosis rathe
 
     IMAGE1: histogram of n for each type of stroke, with data point inserted for each n
 
-### Each of the different diagnosis groups will then be divided by In-patient, Emergency room, or Combination first visit
+**Each of the different diagnosis groups will then be divided by In-patient, Emergency room, or Combination first visit:**
 
 <img src="img/Inpatient_ids.png" width=300>
 <br>

@@ -1,26 +1,34 @@
 # Exploratory Data Analysis (EDA)
 
 # Setup
-* Read [tutorial](tutorial.md) to setup your environment.
-* [how_to_use_templates](how_to_use_templates.md) teaches you how to use python to access redshift database. You can use dbeaver as a visualization tool with it.
+
+- Read [tutorial](tutorial.md) to setup your environment.
+- [how_to_use_templates](how_to_use_templates.md) teaches you how to use python to access redshift database. You can use dbeaver as a visualization tool with it.
 
 ## Create intermediate tables
-* Following command will create a table 'inpatient_stroke' into your work schema:
+
+- Following command will create a table 'inpatient_stroke' into your work schema:
+
 ```
 make inpatient_stroke
 ```
-* Following command will create a table 'stroke_cohort_w_aphasia' into your work schema:
+
+- Following command will create a table 'stroke_cohort_w_aphasia' into your work schema:
+
 ```
 make stroke_cohort_w_aphasia
 ```
 
 ## Analysis
-* Run following command to get table information and figures from 'stroke_cohort_w_aphasia':
+
+- Run following command to get table information and figures from 'stroke_cohort_w_aphasia':
+
 ```
 make test
 ```
 
-* The info of Pandas dataframe of 'stroke_cohort_w_aphasia' is following:
+- The info of Pandas dataframe of 'stroke_cohort_w_aphasia' is following:
+
 ```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 67128 entries, 0 to 67127
@@ -40,12 +48,12 @@ Data columns (total 10 columns):
 dtypes: int64(6), object(4)
 ```
 
-* The number of data points are reduced to 67128, since we are only looking into datapoints that are 'inpatient' and 'strokes'. This is much manageable size of data now.
+- The number of data points are reduced to 67128, since we are only looking into datapoints that are 'inpatient' and 'strokes'. This is much manageable size of data now.
 
 <img src="../figs/test.png" width=600>
 
-* The plot shows that '443454' code, which is Cerebral thrombosis is the most common case.
-* There are many other 'condition_concept_id' in here, which are more specific disease codes within the 7 strokes.
+- The plot shows that '443454' code, which is Cerebral thrombosis is the most common case.
+- There are many other 'condition_concept_id' in here, which are more specific disease codes within the 7 strokes.
 
 ## Disclaimer
 

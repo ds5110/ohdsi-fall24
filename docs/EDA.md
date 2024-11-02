@@ -48,7 +48,7 @@ Data columns (total 10 columns):
 dtypes: int64(6), object(4)
 ```
 
-- The number of data points are reduced to 67128, since we are only looking into datapoints that are 'inpatient' and 'strokes'. This is much manageable size of data now.
+- The number of data points are reduced to 67,128, since we are only looking into datapoints that are 'inpatient' and 'strokes'. This is much manageable size of data now.
 
 <br>
 <img src="../figs/test.png" width=600>
@@ -61,20 +61,11 @@ dtypes: int64(6), object(4)
 
 # Further Proposal Notes
 
-Our project will establish stroke patient ‘paths’ through treatment, to further disaggregate the initial cohort definition that captures first-occurance in-patient and emergency department stroke diagnosis. We will focus our path on physical location of patients while receiving treatment, and indication of whether they have received physical/occupational and/or speech therapy. The objective is to create defined paths that will support future research on the efficacy of different treatment processes, timing, and duration.
+Our project will establish stroke patient ‘paths’ through treatment, to further disaggregate the initial cohort definition that captures first-occurance in-patient and emergency department stroke diagnosis. We will focus our path on physical location of patients after inpatient discharge, and indication of whether they have received physical/occupational and/or speech therapy. The objective is to create defined paths that will support future research on the efficacy of different treatment processes, location, and duration.
 
-Our cohort definition is based on a SQL query developed by Casey Tilton, a capstone student also working with the OHDSI database on questions around stoke victims. We plan to review and refine Casey’s script; his original SQL code is stored here: docs/Stroke_cohort.md
+Our cohort definition is based on a SQL query developed by Casey Tilton, a capstone student also working with the OHDSI database on questions around stoke victims. We have reviewed and refined Casey’s script; his original SQL code is stored here: docs/Stroke_cohort.md
 
-**Population (N) = 67,000**
-
-(N may change as we refine the cohort definition)
-
-TABLES 1 and 2: Summary statistics (mean, median, STD DEV, max, min, quartiles) for the following to inform potential categorization or groupings:
-
-- Number of occurences attached to each patient
-- Time (in days) from first stroke occurance to final treatment occurance associated with the stroke
-
-Hypothesis: The first 'cut' will be to divide N by type of stroke dianosis rather than the first actual activity related to the patient, as the category of stroke is a more important demarcation than the type of each initial visit.
+**Population (N) = 67,128**
 
 **The Stroke Diagnosis Categories Are:**
 
@@ -82,17 +73,7 @@ Hypothesis: The first 'cut' will be to divide N by type of stroke dianosis rathe
 <br>
 <br>
 
-    IMAGE1: histogram of n for each type of stroke, with data point inserted for each n
-
-**Each of the different diagnosis groups will then be divided by In-patient, Emergency room, or Combination first visit:**
-
-<img src="img/Inpatient_ids.png" width=300>
-<br>
-<br>
-
-    IMAGE2: Multiple histogram plots with each stroke type by in-patient, ER, or combination
-
-**From there, each group, now divided first by diagnosis and then by ER-only, inpatient, and combination will be further divided into discharge type:**
+**From there, each group, divided by diagnosis will be further divided into discharge type:**
 
 - Home Visit
 - Discharged to Home
@@ -102,29 +83,35 @@ Hypothesis: The first 'cut' will be to divide N by type of stroke dianosis rathe
 - Long Term Care Facility
 - Hospice
 
-Note that further investigations may find that the following additional, low incidence discharge facilities may be appropriately included in one of the larger above groups. We will run separate analysis of these groups to determine if their subsequent experience and process is close enough to the top seven discharge facilities to include in one:
+Note that further investigations may find that the following additional, low incidence discharge facilities may be appropriately included in one of the larger above groups. We plan to run separate analysis of these groups to determine if their subsequent experience and process is close enough to the top seven discharge facilities to include in one:
 
 - Intermediate Medical Care Facility
 - Hospital Swing Beds
 - Critical Access Hospital
 - Comprehensive Inpatient Rehabiloitation Facility
 
+**From there, each group, divided by diagnosis will be further divided into treatment type:**
+- Physical and occupational therapy
+- Speech therapy
+- Combination of physical, occupational, and speech therapy
+  
 At this point, there will be the following initial paths:
 
 - Type of stroke (7 separate groups including dependencies)
-- Initial visit (7 stroke types divided into three visit types, or 21 groups)
-- Discharge destination (21 groups divided into 7 discharge locations or 147 groups)
+- Discharge destination (7 groups divided into 7 discharge locations, or 49 groups)
+- Type of therapy (49 groups divided into 3 treatment types, or 147 groups)
 
-The project stakeholder has suggested we end the trace of a path when the cohort following the path reaches approximately n = 1% to 2% of the original cohort group, or when the path reaches a ‘dead end’ because remaining data splits are not relevant.
+**Potential addtional path parameters**
+The project stakeholder has suggested we end the trace of a path when the cohort following the path reaches approximately n = 1% to 2% of the original cohort group, or when the path reaches a ‘dead end’ because remaining data splits are found to be not relevant.
 
-Potential further path tracing, dependent on sample size in group (minimum n for pursuing addition paths approxiamtely 670 unique patients):
+Potential further path tracing beyond 147 groups, dependent on sample size in group (minimum n for pursuing addition paths approxiamtely 670 unique patients):
 
-- Type of therapy (physical/occupational combined, speech alone, physical/occupational/speech combined) for 441 groups
-- To identify if there is a need for and establish the appropriate groupings for duration of therapy (measured in number of occurances):
+- Duration of therapy (measured in number of occurances)
+- Aphasia diagnosis
+- Total duration of treatment from initial stroke diagnosis to final occurance stroke-related therapy (measured in days)
 
-TABLE 3: Summary statistics (mean, median, STD DEV, max, min, quartiles) of total overall occurances for all physical, occupational, and speech therapies
 <br>
-<br>
+
 
 # Background
 

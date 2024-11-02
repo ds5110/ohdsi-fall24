@@ -135,6 +135,6 @@ TABLE 3: Summary statistics (mean, median, STD DEV, max, min, quartiles) of tota
 <br>
 <br>
 
-**Our edited version of the ER diagram based on the current Cohort Query used:**
+**Our edited version of the ER diagram based on the current Cohort Query:**
 
 <img src="img/cohort_er_diagram.png" width=500>

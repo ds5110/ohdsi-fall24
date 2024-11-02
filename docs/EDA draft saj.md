@@ -20,9 +20,34 @@ make stroke_cohort_w_aphasia
 make test
 ```
 
-![alternative to HTML](figs/test.png)
+* The info of Pandas dataframe of 'stroke_cohort_w_aphasia' is following:
+```
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 67128 entries, 0 to 67127
+Data columns (total 10 columns):
+ #   Column                         Non-Null Count  Dtype
+---  ------                         --------------  -----
+ 0   condition_occurrence_id        67128 non-null  int64
+ 1   person_id                      67128 non-null  int64
+ 2   condition_concept_id           67128 non-null  int64
+ 3   condition_start_date           67128 non-null  object
+ 4   condition_end_date             67128 non-null  object
+ 5   row_num                        67128 non-null  int64
+ 6   observation_period_start_date  67128 non-null  object
+ 7   observation_period_end_date    67128 non-null  object
+ 8   observation_period_id          67128 non-null  int64
+ 9   has_aphasia                    67128 non-null  int64
+dtypes: int64(6), object(4)
+```
 
-##
+* The number of data points are reduced to 67128, since we are only looking into datapoints that are 'inpatient' and 'strokes'. This is much manageable size of data now.
+
+<img src="../figs/test.png" width=600>
+
+* The plot shows that '443454' code, which is Cerebral thrombosis is the most common case.
+* There are many other 'condition_concept_id' in here, which are more specific disease codes within the 7 strokes.
+
+## Disclaimer
 
 Our project will establish stroke patient ‘paths’ through treatment, to further disaggregate the initial cohort definition that captures first-occurance in-patient and emergency department stroke diagnosis. We will focus our path on physical location of patients while receiving treatment, and indication of whether they have received physical/occupational and/or speech therapy. The objective is to create defined paths that will support future research on the efficacy of different treatment processes, timing, and duration.
 

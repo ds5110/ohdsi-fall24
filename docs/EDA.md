@@ -88,9 +88,10 @@ Note that further investigations may find that the following additional, low inc
 - Intermediate Medical Care Facility
 - Hospital Swing Beds
 - Critical Access Hospital
-- Comprehensive Inpatient Rehabiloitation Facility
+- Comprehensive Inpatient Rehabilitation Facility
 
 **From there, each group, divided by diagnosis will be further divided into treatment type:**
+
 - Physical and occupational therapy
 - Speech therapy
 - Combination of physical, occupational, and speech therapy
@@ -102,13 +103,14 @@ At this point, there will be the following initial paths:
 - Type of therapy (49 groups divided into 3 treatment types, or 147 groups)
 
 **Potential addtional path parameters**
+
 The project stakeholder has suggested we end the trace of a path when the cohort following the path reaches approximately n = 1% to 2% of the original cohort group, or when the path reaches a ‘dead end’ because remaining data splits are found to be not relevant.
 
 Potential further path tracing beyond 147 groups, dependent on sample size in group (minimum n for pursuing addition paths approxiamtely 670 unique patients):
 
 - Duration of therapy (measured in number of occurances)
 - Aphasia diagnosis
-- Total duration of treatment from initial stroke diagnosis to final occurance stroke-related therapy (measured in days)
+- Total duration of treatment from initial stroke diagnosis to final stroke-related therapy (measured in days)
 
 <br>
 

@@ -123,5 +123,18 @@ Potential further path tracing, dependent on sample size in group (minimum n for
 - To identify if there is a need for and establish the appropriate groupings for duration of therapy (measured in number of occurances):
 
 TABLE 3: Summary statistics (mean, median, STD DEV, max, min, quartiles) of total overall occurances for all physical, occupational, and speech therapies
+<br>
+<br>
 
 # Background
+
+**Entity-Relationship Diagram of OMOP, the model OHDSI is based on:**
+
+![](https://raw.githubusercontent.com/OHDSI/CommonDataModel/main/rmd/images/erd.jpg)
+
+<br>
+<br>
+
+**Our edited version of the ER diagram based on the current Cohort Query used:**
+
+<img src="img/cohort_er_diagram.png" width=300>

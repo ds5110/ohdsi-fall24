@@ -1,6 +1,28 @@
 # Exploratory Data Analysis (EDA)
 
-# Note that currently we do not have access to our AWS workspaces (though we have been able to access the AWS previously) so we have indicated where data and images will be inserted once that problem is resolved:
+# Setup
+* Read [tutorial](tutorial.md) to setup your environment.
+* [how_to_use_templates](how_to_use_templates.md) teaches you how to use python to access redshift database. You can use dbeaver as a visualization tool with it.
+
+## Create intermediate tables
+* Following command will create a table 'inpatient_stroke' into your work schema:
+```
+make inpatient_stroke
+```
+* Following command will create a table 'stroke_cohort_w_aphasia' into your work schema:
+```
+make stroke_cohort_w_aphasia
+```
+
+## Analysis
+* Run following command to get table information and figures from 'stroke_cohort_w_aphasia':
+```
+make test
+```
+
+![alternative to HTML](figs/test.png)
+
+##
 
 Our project will establish stroke patient ‘paths’ through treatment, to further disaggregate the initial cohort definition that captures first-occurance in-patient and emergency department stroke diagnosis. We will focus our path on physical location of patients while receiving treatment, and indication of whether they have received physical/occupational and/or speech therapy. The objective is to create defined paths that will support future research on the efficacy of different treatment processes, timing, and duration.
 

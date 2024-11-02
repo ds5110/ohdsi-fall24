@@ -92,7 +92,7 @@ Hypothesis: The first 'cut' will be to divide N by type of stroke dianosis rathe
 
     IMAGE2: Multiple histogram plots with each stroke type by in-patient, ER, or combination
 
-### From there, each group, now divided first by diagnosis and then by ER-only, inpatient, and combination will be further divided into discharge type:
+**From there, each group, now divided first by diagnosis and then by ER-only, inpatient, and combination will be further divided into discharge type:**
 
 - Home Visit
 - Discharged to Home
@@ -137,4 +137,4 @@ TABLE 3: Summary statistics (mean, median, STD DEV, max, min, quartiles) of tota
 
 **Our edited version of the ER diagram based on the current Cohort Query used:**
 
-<img src="img/cohort_er_diagram.png" width=300>
+<img src="img/cohort_er_diagram.png" width=400>

@@ -106,7 +106,7 @@ At this point, there will be the following initial paths:
 
 The project stakeholder has suggested we end the trace of a path when the cohort following the path reaches approximately n = 1% to 2% of the original cohort group, or when the path reaches a ‘dead end’ because remaining data splits are found to be not relevant.
 
-Potential further path tracing beyond 147 groups, dependent on sample size in group (minimum n for pursuing addition paths approxiamtely 670 unique patients):
+Potential further path tracing beyond 147 groups, dependent on sample size in group (minimum n for pursuing additional paths approxiamtely 670 unique patients):
 
 - Duration of therapy (measured in number of occurances)
 - Aphasia diagnosis

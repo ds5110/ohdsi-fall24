@@ -48,7 +48,6 @@ def read_df(con, query):
 
     # Create a pandas dataframe of the table read.
     df = cursor.fetch_dataframe()
-    print(df.head())
 
     # Commit the changes to the database.
     con.commit()

@@ -48,62 +48,32 @@ Data columns (total 10 columns):
 dtypes: int64(6), object(4)
 ```
 
-- The number of data points are reduced to 67128, since we are only looking into datapoints that are 'inpatient' and 'strokes'. This is much manageable size of data now.
+- The number of data points are reduced to 67,128, since we are only looking into datapoints that are 'inpatient' and 'strokes'. This is much manageable size of data now.
 
+<br>
 <img src="../figs/test.png" width=600>
+<br>
 
-- The plot shows that '443454' code, which is Cerebral thrombosis is the most common case.
+- The plot shows that '443454' code, which is Cerebral infarction, is the most common case.
 - There are many other 'condition_concept_id' in here, which are more specific disease codes within the 7 strokes.
+  <br>
+  <br>
 
-## Disclaimer
+# Further Proposal Notes
 
-Our project will establish stroke patient ‘paths’ through treatment, to further disaggregate the initial cohort definition that captures first-occurance in-patient and emergency department stroke diagnosis. We will focus our path on physical location of patients while receiving treatment, and indication of whether they have received physical/occupational and/or speech therapy. The objective is to create defined paths that will support future research on the efficacy of different treatment processes, timing, and duration.
+Our project will establish stroke patient ‘paths’ through treatment, to further disaggregate the initial cohort definition that captures first-occurance in-patient and emergency department stroke diagnosis. We will focus our path on physical location of patients after inpatient discharge, and indication of whether they have received physical/occupational and/or speech therapy. The objective is to create defined paths that will support future research on the efficacy of different treatment processes, location, and duration.
 
-Our cohort definition is based on a SQL query developed by Casey Tilton, a capstone student also working with the OHDSI database on questions around stoke victims. We plan to review and refine Casey’s script; his original SQL code is stored here: docs/Stroke_cohort.md
+Our cohort definition is based on a SQL query developed by Casey Tilton, a capstone student also working with the OHDSI database on questions around stoke victims. We have reviewed and refined Casey’s script; his original SQL code is stored here: docs/Stroke_cohort.md
 
-Population (N) = 67,000
-(N may change as we refine the cohort definition)
+**Population (N) = 67,128**
 
-TABLES 1 and 2: Summary statistics (mean, median, STD DEV, max, min, quartiles) for the following to inform potential categorization or groupings:
+**The Stroke Diagnosis Categories Are:**
 
-- Number of occurences attached to each patient
-- Time (in days) from first stroke occurance to final treatment occurance associated with the stroke
+<img src="img/stroke_ids.png" width=300>
+<br>
+<br>
 
-Hypothesis: The first 'cut' will be to divide N by type of stroke dianosis rather than the first actual activity related to the patient, as the category of stroke is a more important demarcation than the type of each initial visit.
-
-The stroke diagnosis categories are:
-
-Concept ID and Name
-
-372924 Cerebral artery occlusion
-
-375557 Cerebral embolism
-
-376713 Cerebral hemorrhage
-
-443454 Cerebral infarction
-
-441874 Cerebral thrombosis
-
-439847 Intracranial hemorrhage
-
-432923 Subarachnoid hemorrhage
-
-    IMAGE1: histogram of n for each type of stroke, with data point inserted for each n
-
-Each of the different diagnosis groups will then be divided by in-patient, emergency room, or combination first visit
-
-Concept ID and Name
-
-262 Emergency Room and Inpatient Visit
-
-9203 Emergency Room Visit
-
-9201 Inpatient Visit
-
-    IMAGE2: Multiple histogram plots with each stroke type by in-patient, ER, or combination
-
-From there, each group, now divided first by diagnosis and then by ER-only, inpatient, and combination will be further divided into discharge type:
+**From there, each group, divided by diagnosis will be further divided into discharge type:**
 
 - Home Visit
 - Discharged to Home
@@ -113,24 +83,47 @@ From there, each group, now divided first by diagnosis and then by ER-only, inpa
 - Long Term Care Facility
 - Hospice
 
-Note that further investigations may find that the following additional, low incidence discharge facilities may be appropriately included in one of the larger above groups. We will run separate analysis of these groups to determine if their subsequent experience and process is close enough to the top seven discharge facilities to include in one:
+Note that further investigations may find that the following additional, low incidence discharge facilities may be appropriately included in one of the larger above groups. We plan to run separate analysis of these groups to determine if their subsequent experience and process is close enough to the top seven discharge facilities to include in one:
 
 - Intermediate Medical Care Facility
 - Hospital Swing Beds
 - Critical Access Hospital
-- Comprehensive Inpatient Rehabiloitation Facility
+- Comprehensive Inpatient Rehabilitation Facility
 
+**From there, each group, divided by diagnosis will be further divided into treatment type:**
+
+- Physical and occupational therapy
+- Speech therapy
+- Combination of physical, occupational, and speech therapy
+  
 At this point, there will be the following initial paths:
 
 - Type of stroke (7 separate groups including dependencies)
-- Initial visit (7 stroke types divided into three visit types, or 21 groups)
-- Discharge destination (21 groups divided into 7 discharge locations or 147 groups)
+- Discharge destination (7 groups divided into 7 discharge locations, or 49 groups)
+- Type of therapy (49 groups divided into 3 treatment types, or 147 groups)
 
-The project stakeholder has suggested we end the trace of a path when the cohort following the path reaches approximately n = 1% to 2% of the original cohort group, or when the path reaches a ‘dead end’ because remaining data splits are not relevant.
+**Potential addtional path parameters**
 
-Potential further path tracing, dependent on sample size in group (minimum n for pursuing addition paths approxiamtely 670 unique patients):
+The project stakeholder has suggested we end the trace of a path when the cohort following the path reaches approximately n = 1% to 2% of the original cohort group, or when the path reaches a ‘dead end’ because remaining data splits are found to be not relevant.
 
-- Type of therapy (physical/occupational combined, speech alone, physical/occupational/speech combined) for 441 groups
-- To identify if there is a need for and establish the appropriate groupings for duration of therapy (measured in number of occurances):
+Potential further path tracing beyond 147 groups, dependent on sample size in group (minimum n for pursuing additional paths approxiamtely 670 unique patients):
 
-TABLE 3: Summary statistics (mean, median, STD DEV, max, min, quartiles) of total overall occurances for all physical, occupational, and speech therapies
+- Duration of therapy (measured in number of occurances)
+- Aphasia diagnosis
+- Total duration of treatment from initial stroke diagnosis to final stroke-related therapy (measured in days)
+
+<br>
+
+
+# Background
+
+**Entity-Relationship Diagram of OMOP, the model OHDSI is based on:**
+
+![](https://raw.githubusercontent.com/OHDSI/CommonDataModel/main/rmd/images/erd.jpg)
+
+<br>
+<br>
+
+**Our edited version of the ER diagram based on the current Cohort Query:**
+
+<img src="img/cohort_er_diagram.png" width=500>

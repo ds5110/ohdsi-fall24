@@ -16,10 +16,13 @@ df = read_df(con, query)
 print(df.info())
 
 df["condition_concept_id"] = df["condition_concept_id"].apply(str)
+plt.figure(figsize=(12,6))
 sns.histplot(data=df, x="condition_concept_id")
 # sns.jointplot(
 #    data=df, x="condition_concept_id", y="condition_occurrence_id", kind="hist"
 # )
-plt.xticks(rotation=60)
-plt.savefig("figs/test.png")
+plt.xticks(rotation=90)
+plt.xlabel("Condition concept id", labelpad=20)
+plt.savefig("figs/test.png", bbox_inches="tight")
+plt.tight_layout()
 plt.show()

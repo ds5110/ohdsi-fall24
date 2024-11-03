@@ -7,6 +7,7 @@
 
 ## Create intermediate tables
 
+- These SQL codes for the intermediate tables were provided by Casey Tilton.
 - Following command will create a table 'inpatient_stroke' into your work schema:
 
 ```
@@ -19,7 +20,7 @@ make inpatient_stroke
 make stroke_cohort_w_aphasia
 ```
 
-## Analysis
+## Preliminary Analysis
 
 - Run following command to get table information and figures from 'stroke_cohort_w_aphasia':
 
@@ -124,6 +125,6 @@ Potential further path tracing beyond 147 groups, dependent on sample size in gr
 <br>
 <br>
 
-**Our edited version of the ER diagram based on the current Cohort Query:**
+**Our edited version of the ER diagram based on the current Cohort Query (inpatient_stroke):**
 
 <img src="img/cohort_er_diagram.png" width=500>

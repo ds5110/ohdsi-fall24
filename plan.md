@@ -49,21 +49,21 @@ Our project will establish stroke patient ‘paths’ through treatment, to furt
 - **Week 8** &nbsp; &nbsp; 10/21 - 10/27 &nbsp; &nbsp; &nbsp; **EDA Due**
   1. [x] Sally send Rob goal outline
   2. [x] Monday meeting @ 4pm
-  3. [x] Meet before class on Thursday @ 4:30pm to go cohort with Casey and work on EDA
+  3. [x] Meet before class on Thursday @ 4:30pm to go over cohort with Casey and work on EDA
   4. [x] Meet on Saturday from 12pm - 2pm. Work on EDA.
-  5. [x] Submit EDA assignment
          <br>
          <br>
 - **Week 9** &nbsp; &nbsp; 10/28 - 11/3 &nbsp; &nbsp; &nbsp; **EDA Due**
   1. [x] EDA due Tuesday 10/29 - Submit
-  2. [ ] Meet on Saturday from 12pm - 2pm (online)
+  2. [x] Meet on Saturday from 12pm - 2pm (online)
          <br>
          <br>
-- **Week 10** &nbsp; &nbsp; 11/4 - 11/10 &nbsp; &nbsp; &nbsp; **Proposal Due**
-  1. [ ] Meet on Saturday from 12pm - 2pm (online)
+- **Week 10** &nbsp; &nbsp; 11/4 - 11/10 &nbsp; &nbsp; &nbsp; **Checkin**
+  1. [x] 4pm OHDSI meeting - checkin with Rob
+  2. [ ] Meet on Sunday from 1pm - 2pm (online)
          <br>
          <br>
-- **Week 11** &nbsp; &nbsp; 11/11 - 11/17 &nbsp; &nbsp; &nbsp; **Checkin**
+- **Week 11** &nbsp; &nbsp; 11/11 - 11/17 &nbsp; &nbsp; &nbsp; **Proposal Due?**
   1. [ ] Meet on Saturday from 12pm - 2pm (online)
          <br>
          <br>

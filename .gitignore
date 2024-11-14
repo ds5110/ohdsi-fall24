@@ -2,4 +2,4 @@
 junk
 data
 config.ini
-__pycache__
+src/__pycache__

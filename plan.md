@@ -63,13 +63,14 @@ Our project will establish stroke patient ‘paths’ through treatment, to furt
   2. [ ] Meet on Sunday from 1pm - 2pm (online)
          <br>
          <br>
-- **Week 11** &nbsp; &nbsp; 11/11 - 11/17 &nbsp; &nbsp; &nbsp; **Proposal Due?**
+- **Week 11** &nbsp; &nbsp; 11/11 - 11/17
   1. [ ] send an update to Rob by Wednesday 11/13 and include any questions
   2. [ ] Meet on Saturday from 12pm - 2pm (online)
          <br>
          <br>
-- **Week 12** &nbsp; &nbsp; 11/18 - 11/24
-  1. [ ] Meet on Saturday from 12pm - 2pm (online)
+- **Week 12** &nbsp; &nbsp; 11/18 - 11/24 &nbsp; &nbsp; &nbsp; **Proposal Due**
+  1. [ ] Proposal due Thursday 11/21
+  2. [ ] Meet on Saturday from 12pm - 2pm (online)
          <br>
          <br>
 - **Week 13** &nbsp; &nbsp; 11/25 - 12/1 &nbsp; &nbsp; &nbsp; **Prototype Due**

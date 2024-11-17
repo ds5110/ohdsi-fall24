@@ -25,7 +25,7 @@ make stroke_cohort_w_aphasia
 - Run following command to get table information and figures from 'stroke_cohort_w_aphasia':
 
 ```
-make test
+make plot_stroke_desc_concept
 ```
 
 - The info of Pandas dataframe of 'stroke_cohort_w_aphasia' is following:
@@ -59,6 +59,34 @@ dtypes: int64(6), object(4)
 - There are many other 'condition_concept_id' in here, which are more specific disease codes within the 7 strokes.
   <br>
   <br>
+
+- Run following command to get a figures to show the rate of aphasia in 'stroke_cohort_w_aphasia':
+
+```
+make plot_stroke_desc_concept
+```
+<br>
+<img src="../figs/aphasia_dist.png" width=600>
+<br>
+
+- As you can see, more stroke patients have no aphasia.
+  <br>
+  <br>
+
+
+- Run following command to create a table 'stroke_cohort_w_aphasia_FALSE':
+
+```
+make stroke_cohort_w_aphasia_FALSE
+```
+
+- Run following command to create a table 'stroke_cohort_w_aphasia_TRUE':
+
+```
+make stroke_cohort_w_aphasia_TRUE
+```
+
+- Now we have 2 tables that are separating 'stroke_cohort_w_aphasia' by whether the patients have aphasia or not.
 
 # Further Proposal Notes
 

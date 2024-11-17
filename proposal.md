@@ -1,18 +1,4 @@
-# Proposal
-
 # Identification of Patterns in Stroke Care Transitions, using [OHDSI](https://ohdsi.northeastern.edu/) Pharmetrics+ data
-
-Stakeholder:
-
-- [Rob Cavanaugh, PhD](https://roux.northeastern.edu/people/rob-cavanaugh/) -- Roux Institute
-
-Team:
-
-- Alex Corcoran (lead)
-
-- Sally Johnstone
-
-- Jaee Oh
 
 ## Story
 

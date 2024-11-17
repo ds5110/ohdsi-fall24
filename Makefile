@@ -7,6 +7,9 @@ stroke_cohort_w_aphasia:
 plot_stroke_desc_concept:
 	python -B src/plot_stroke_desc_concept.py
 
+plot_has_aphasia:
+	python -B src/plot_has_aphasia.py
+
 test:
 	python -B src/test.py
 

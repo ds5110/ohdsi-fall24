@@ -60,25 +60,25 @@ Our project will establish stroke patient ‘paths’ through treatment, to furt
          <br>
 - **Week 10** &nbsp; &nbsp; 11/4 - 11/10 &nbsp; &nbsp; &nbsp; **Checkin**
   1. [x] 4pm OHDSI meeting - checkin with Rob
-  2. [ ] Meet on Sunday from 1pm - 2pm (online)
+  2. [x] Meet on Sunday from 1pm - 2pm (online)
          <br>
          <br>
 - **Week 11** &nbsp; &nbsp; 11/11 - 11/17
   1. [ ] send an update to Rob by Wednesday 11/13 and include any questions
-  2. [ ] Meet on Saturday from 12pm - 2pm (online)
+  2. [ ] Meet on Sunday from 2pm - 4pm (online)
          <br>
          <br>
 - **Week 12** &nbsp; &nbsp; 11/18 - 11/24 &nbsp; &nbsp; &nbsp; **Proposal Due**
   1. [ ] Proposal due Thursday 11/21
-  2. [ ] Meet on Saturday from 12pm - 2pm (online)
+  2. [ ] Meet on Sunday from 2pm - 4pm (online)
          <br>
          <br>
 - **Week 13** &nbsp; &nbsp; 11/25 - 12/1 &nbsp; &nbsp; &nbsp; **Prototype Due**
-  1. [ ] Meet on Saturday from 12pm - 2pm (online)
+  1. [ ] Submit Prototype on Tuesday, 11/26? this is an optional assignment
+  2. [ ] Meet on Saturday from 12pm - 2pm (online)
          <br>
          <br>
-- **Week 14** &nbsp; &nbsp; 12/2 - 12/8 &nbsp; &nbsp; &nbsp; **Presentation**
-  1. [ ] Meet on Saturday from 12pm - 2pm (online)
+- **Week 14** &nbsp; &nbsp; 12/2 - 12/8 &nbsp; &nbsp; &nbsp; **Presentation and Final Submission**
+  1. [ ] Presentation on Thursday, 12/5
          <br>
          <br>
-- **Week 15** &nbsp; &nbsp; 12/9 - 12/6 &nbsp; &nbsp; &nbsp; **Final Submission**

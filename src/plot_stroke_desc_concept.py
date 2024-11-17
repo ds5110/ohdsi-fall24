@@ -29,14 +29,13 @@ print(
 df["condition_concept_id"] = df["condition_concept_id"].apply(str)
 
 # Plot.
-fig, ax = plt.subplots(2, 1, figsize=(12, 12))
+fig, ax = plt.subplots(2, 1, figsize=(12, 20))
 sns.histplot(data=df, x="condition_concept_id", ax=ax[0])
 sns.histplot(data=df, x="condition_concept_id", ax=ax[1])
 ax[0].tick_params(axis="x", rotation=90)
 ax[0].set_title("Descendant concept id of the stroke cohort")
 ax[0].set_xlabel("Condition concept id", labelpad=20)
 ax[1].tick_params(axis="x", rotation=90)
-ax[1].set_title("Descendant concept id of the stroke cohort in log scale")
 ax[1].set_xlabel("Condition concept id", labelpad=20)
 ax[1].set_yscale("log")
 plt.savefig("figs/stroke_desc_concept_id.png", bbox_inches="tight")

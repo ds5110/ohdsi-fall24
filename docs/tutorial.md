@@ -78,8 +78,8 @@ example:
 ## Configuration of your Redshift credentials on python
 * DO NOT put your credentials directly to your source codes. You don't want your password to be pushed on your public git repository.
 * Instead, use [configparser](https://docs.python.org/3/library/configparser.html) package. This package is already installed with Miniconda as an default package.
-* Create a file named 'config.ini' on your directory.
-  * You MUST list this file on your .gitignore first, so it will never be pushed to your git repository.
+* Create a file named 'config.ini' on your repo. You can do this by simply changing the context of your 'config_template.ini' file. This file should be in your project directory, but not in any of the sub-directories. If you want to change its location, you MUST make sure the new location is included in your .gitignore.
+  * Make sure this file is listed on your .gitignore first, so it will never be pushed to your git repository.
   * The credentials that you got from the email when you created the workspace will be used here.
   * The [JDBC url](https://docs.aws.amazon.com/redshift/latest/mgmt/jdbc20-obtain-url.html) is formatted in a following way: jdbc:redshift://endpoint:port/database
   * Note that 'JDBC url' and 'url' are different things. endpoint, host and url all refers to a same thing. You can separate this further with cluster, region, etc., but it is not necessary in here.
@@ -91,6 +91,7 @@ database=<database>
 port=<port>
 user=<redshift user name>
 password=<redshift password>
+schema=<your redshift work schema>
 ```
 
 
@@ -188,4 +189,15 @@ con.rollback()
 con.autocommit = True
 # Turn off autocommit
 con.autocommit = False
+```
+
+## Use pre-defined functions
+* While you can understand and practice with the templates and above examples, we have created pre-defined functions that can be used in 'utils.py' file. You can use following 4 functions to process data in pandas data frame, and read and write tables in and out of your schema. Only reading is allowed for the omop schema.
+  * config()
+  * run_query()
+  * write_df()
+  * read_df()
+* 'src/test.py' can be used as a template of using these functions. It can be ran by following command:
+```
+make test
 ```

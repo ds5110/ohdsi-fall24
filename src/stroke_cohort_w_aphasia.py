@@ -2,6 +2,7 @@ from utils import config, run_query
 
 con, work_schema = config()
 
+# This SQL query belongs to Casey Tilton.
 query = f"""
 -- creating a cohort with aphasia indicator
 with first_stroke_occurrence as 

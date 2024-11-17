@@ -2,6 +2,7 @@ from utils import config, run_query
 
 con, work_schema = config()
 
+# This SQL query belongs to Casey Tilton.
 query = f"""
 --creating an intermediate table for all condition occurrences that match the stroke-related concept ids for inpatient visits
 select co.condition_occurrence_id, co.person_id, co.condition_concept_id, co.condition_start_date, co.condition_end_date

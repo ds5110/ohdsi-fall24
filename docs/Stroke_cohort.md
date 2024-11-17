@@ -20,7 +20,7 @@ select ca.descendant_concept_id from omop_cdm_53_pmtx_202203.concept_ancestor ca
 inner join omop_cdm_53_pmtx_202203.concept c on 
 ca.descendant_concept_id = c.concept_id 
 where ancestor_concept_id IN (372924,375557,376713,443454,441874,439847,432923) -- stroke occurrence codes and all descendants
-
+);
 
 -- creating a cohort with aphasia indicator
 with first_stroke_occurrence as 

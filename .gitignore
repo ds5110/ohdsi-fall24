@@ -3,3 +3,4 @@ junk
 data
 config.ini
 src/__pycache__
+src/test_junk.py

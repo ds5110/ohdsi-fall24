@@ -6,18 +6,13 @@
 
 # Project Plan
 
-### Team Roles
+### Team Roles & Responsibilities
 
-- Alex Corcoran (lead) - UI/UX
-- Sally Johnstone - PM
-- Jaee Oh - Data Analyst
-  <br>
+- Alex Corcoran (lead) - UI/UX Design
 
-### Responsibilities
+- Sally Johnstone - Project Manager
 
-- Alex -
-- Sally -
-- Jaee -
+- Jaee Oh - Senior Software Engineer
   <br>
 
 ### Project Goal
@@ -64,13 +59,13 @@ Our project will establish stroke patient ‘paths’ through treatment, to furt
          <br>
          <br>
 - **Week 11** &nbsp; &nbsp; 11/11 - 11/17
-  1. [ ] send an update to Rob by Wednesday 11/13 and include any questions
-  2. [ ] Meet on Sunday from 2pm - 4pm (online)
+  1. [x] Meet on Sunday from 2pm - 4pm (online), review EDA with Prof Bogden
          <br>
          <br>
 - **Week 12** &nbsp; &nbsp; 11/18 - 11/24 &nbsp; &nbsp; &nbsp; **Proposal Due**
   1. [ ] Proposal due Thursday 11/21
-  2. [ ] Meet on Sunday from 2pm - 4pm (online)
+  2. [ ] Meet before class on Thursday at 5pm
+  3. [ ] Meet on Sunday from 2pm - 4pm (online)
          <br>
          <br>
 - **Week 13** &nbsp; &nbsp; 11/25 - 12/1 &nbsp; &nbsp; &nbsp; **Prototype Due**

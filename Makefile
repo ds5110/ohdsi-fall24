@@ -16,6 +16,15 @@ stroke_cohort_w_aphasia_FALSE:
 stroke_cohort_w_aphasia_TRUE:
 	python -B src/stroke_cohort_w_aphasia_TRUE.py
 
+stroke_ancestor:
+	python -B src/stroke_ancestor.py
+
+plot_stroke_type_aphasia_TRUE:
+	python -B src/plot_stroke_type_aphasia_TRUE.py
+
+plot_stroke_type_aphasia_FALSE:
+	python -B src/plot_stroke_type_aphasia_FALSE.py
+
 test:
 	python -B src/test.py
 

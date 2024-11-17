@@ -10,6 +10,12 @@ plot_stroke_desc_concept:
 plot_has_aphasia:
 	python -B src/plot_has_aphasia.py
 
+stroke_cohort_w_aphasia_FALSE:
+	python -B src/stroke_cohort_w_aphasia_FALSE.py
+
+stroke_cohort_w_aphasia_TRUE:
+	python -B src/stroke_cohort_w_aphasia_TRUE.py
+
 test:
 	python -B src/test.py
 

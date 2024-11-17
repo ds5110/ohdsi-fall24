@@ -85,8 +85,41 @@ make stroke_cohort_w_aphasia_FALSE
 ```
 make stroke_cohort_w_aphasia_TRUE
 ```
-
 - Now we have 2 tables that are separating 'stroke_cohort_w_aphasia' by whether the patients have aphasia or not.
+
+
+- Run following command to create a table 'stroke_ancestor':
+
+```
+make stroke_ancestor
+```
+- This table shows all the descendant concept id of the 7 stroke codes.
+
+- Run following command to get information and figures for the 7 stroke types of stroke cohorts with aphasia:
+
+```
+make plot_stroke_type_aphasia_TRUE
+```
+<br>
+<img src="../figs/stroke_type_aphasia_TRUE.png" width=600>
+<br>
+
+- As you can see '443454' code, which is Cerebral infarction, is still the most common case.
+  <br>
+  <br>
+
+- Run following command to get information and figures for the 7 stroke types of stroke cohorts with no aphasia:
+
+```
+make plot_stroke_type_aphasia_FALSE
+```
+<br>
+<img src="../figs/stroke_type_aphasia_FALSE.png" width=600>
+<br>
+
+- As you can see '443454' code, which is Cerebral infarction, is still the most common case.
+  <br>
+  <br>
 
 # Further Proposal Notes
 

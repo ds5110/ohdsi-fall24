@@ -8,7 +8,7 @@
 2. OHDSI Northeastern website: https://ohdsi.northeastern.edu/
 3. The Book of OHDSI: https://ohdsi.github.io/TheBookOfOhdsi/
 4. OMOP Common Data Model: https://ohdsi.github.io/CommonDataModel/index.html
-5. Athena: https://ohdsi.github.io/CommonDataModel/index.html
+5. Athena: https://athena.ohdsi.org/search-terms/start
 6.
 
 ## How to get started with the database:

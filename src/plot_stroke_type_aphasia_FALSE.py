@@ -30,19 +30,19 @@ sns.histplot(data=df, x="ancestor_concept_id", hue="ancestor_concept_id", palett
 sns.histplot(data=df, x="ancestor_concept_id", hue="ancestor_concept_id", palette="ocean", shrink=0.9, ax=ax[1])
 
 #plot 1 
-ax[0].set_title("Regular", weight="bold", pad=20)
-ax[0].set_xlabel("Condition Concept Id", fontsize=12, labelpad=20)
-ax[0].set_ylabel("Count", fontsize=12, labelpad=15)
+ax[0].set_title("Regular", weight="bold", fontsize=14, pad=20)
+ax[0].set_xlabel("Condition Concept Id", fontsize=14, labelpad=20)
+ax[0].set_ylabel("Count", fontsize=14, labelpad=15)
 
 #plot 2 - log 
 ax[1].set_yscale("log")
-ax[1].set_title("Log", weight="bold", pad=15)
-ax[1].set_xlabel("Condition Concept Id", fontsize=12, labelpad=20)
-ax[1].set_ylabel("Count", fontsize=12, labelpad=15)
+ax[1].set_title("Log", weight="bold", fontsize=14, pad=15)
+ax[1].set_xlabel("Condition Concept Id", fontsize=14, labelpad=20)
+ax[1].set_ylabel("Count", fontsize=14, labelpad=15)
 
 #plot - all 
-fig.suptitle("7 Stroke Types for Stroke Cohorts with No Aphasia", weight="heavy")
-plt.subplots_adjust(bottom=0.1, hspace=0.8)
+fig.suptitle("7 Stroke Types for Stroke Cohorts with No Aphasia", fontsize=16, weight="heavy")
+plt.subplots_adjust(bottom=0.1, hspace=0.9)
 
 plt.savefig("figs/stroke_type_aphasia_FALSE.png", bbox_inches="tight")
 plt.show()

@@ -41,7 +41,7 @@ ax[1].set_xlabel("Condition Concept Id", fontsize=14, labelpad=20)
 ax[1].set_ylabel("Count", fontsize=14, labelpad=15)
 
 #plot - all 
-fig.suptitle("7 Stroke Types for Stroke Cohorts with No Aphasia", fontsize=16, weight="heavy")
+fig.suptitle("7 Stroke Types for Stroke Cohort with No Aphasia", fontsize=16, weight="heavy")
 plt.subplots_adjust(bottom=0.1, hspace=0.9)
 
 plt.savefig("figs/stroke_type_aphasia_FALSE.png", bbox_inches="tight")

@@ -42,7 +42,7 @@ ax[1].set_ylabel("Count", fontsize=14, labelpad=15)
 
 #plot - all 
 ax[1].set_yscale("log")
-fig.suptitle("7 Stroke Types for Stroke Cohorts with Aphasia", fontsize=16, weight="heavy")
+fig.suptitle("7 Stroke Types for Stroke Cohort with Aphasia", fontsize=16, weight="heavy")
 plt.subplots_adjust(bottom=0.1, hspace=0.9)
 
 plt.savefig("figs/stroke_type_aphasia_TRUE.png", bbox_inches="tight")

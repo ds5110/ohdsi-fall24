@@ -35,15 +35,15 @@ sns.histplot(data=df, x="condition_concept_id", color="#00246D", legend=False, a
 
 #plot 1 - reg
 ax[0].tick_params(axis="x", rotation=90)
-ax[0].set_title("Descendant Concept Id of the Stroke Cohort", weight="bold", pad=15)
-ax[0].set_xlabel("Condition Concept Id", fontsize=12, labelpad=20)
-ax[0].set_ylabel("Count", fontsize=12, labelpad=15)
+ax[0].set_title("Stroke Cohort: Descendant Concept Id", fontsize=16, weight="bold", pad=15)
+ax[0].set_xlabel("Condition Concept Id", fontsize=14, labelpad=20)
+ax[0].set_ylabel("Count", fontsize=14, labelpad=15)
 
 #plot 2 - log
-ax[1].set_title("Descendant Concept Id of the Stroke Cohort - Log", weight="bold", pad=15)
+ax[1].set_title("Stroke Cohort: Descendant Concept Id (Log)", fontsize=16, weight="bold", pad=15)
 ax[1].tick_params(axis="x", rotation=90)
-ax[1].set_xlabel("Condition Concept Id", fontsize=12, labelpad=20)
-ax[1].set_ylabel("Count", fontsize=12, labelpad=15)
+ax[1].set_xlabel("Condition Concept Id", fontsize=14, labelpad=20)
+ax[1].set_ylabel("Count", fontsize=14, labelpad=15)
 ax[1].set_yscale("log")
 
 #plot - all 

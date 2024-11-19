@@ -101,7 +101,7 @@ make stroke_ancestor
 make plot_stroke_type_aphasia_TRUE
 ```
 <br>
-<img src="../figs/stroke_type_aphasia_TRUE.png" width=600>
+<img src="../figs/stroke_type_aphasia_TRUE.png" width=900>
 <br>
 
 - As you can see '443454' code, which is Cerebral infarction, is still the most common case.
@@ -114,7 +114,7 @@ make plot_stroke_type_aphasia_TRUE
 make plot_stroke_type_aphasia_FALSE
 ```
 <br>
-<img src="../figs/stroke_type_aphasia_FALSE.png" width=600>
+<img src="../figs/stroke_type_aphasia_FALSE.png" width=900>
 <br>
 
 - As you can see '443454' code, which is Cerebral infarction, is still the most common case.

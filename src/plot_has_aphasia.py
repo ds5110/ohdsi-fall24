@@ -22,10 +22,10 @@ df["has_aphasia"] = df["has_aphasia"].apply(str)
 
 # Plot.
 fig, ax = plt.subplots()
-sns.histplot(data=df, x="has_aphasia", hue="has_aphasia", palette='mako', shrink=.9)
+sns.histplot(data=df, x="has_aphasia", hue="has_aphasia", palette='ocean', shrink=.9)
 ax.set_xticklabels(["No Aphasia", "Has Aphasia"], fontsize=9)
-ax.set_title("Stroke Cohort: No Aphasia vs Has Aphasia", weight="bold", pad=20)
-plt.xlabel("Whether the person has aphasia", fontsize=12, labelpad=15)
+ax.set_title("Stroke Cohort", weight="bold", pad=20)
+plt.xlabel("Condition Presence Among Users", fontsize=12, labelpad=15)
 plt.ylabel("Count", fontsize=12, labelpad=15)
 plt.savefig("figs/aphasia_dist.png", bbox_inches="tight")
 plt.tight_layout()

@@ -52,7 +52,7 @@ dtypes: int64(6), object(4)
 - The number of data points are reduced to 67,128, since we are only looking into datapoints that are 'inpatient' and 'strokes'. This is much manageable size of data now.
 
 <br>
-<img src="../figs/stroke_desc_concept_id.png" width=600>
+<img src="../figs/stroke_desc_concept_id.png" width=900>
 <br>
 
 - The plot shows that '443454' code, which is Cerebral infarction, is the most common case.

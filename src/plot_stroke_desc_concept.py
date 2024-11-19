@@ -47,6 +47,6 @@ ax[1].set_ylabel("Count", fontsize=12, labelpad=15)
 ax[1].set_yscale("log")
 
 #plot - all 
-plt.subplots_adjust(bottom=0.2, hspace=1)
-plt.savefig("figs/stroke_desc_concept_id.png", bbox_inches="tight")
+plt.subplots_adjust(bottom=0.1, hspace=0.8)
+plt.savefig("figs/stroke_desc_concept_id.png")
 plt.show()

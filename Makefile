@@ -14,20 +14,26 @@ stroke_cohort_w_aphasia_TRUE:
 stroke_ancestor:
 	python -B src/stroke_ancestor.py
 
+discharge_ancestor:
+	python -B src/discharge_ancestor.py
+
 visit_oc_stroke_cohort:
 	python -B src/visit_oc_stroke_cohort.py
 
 stroke_cohort_w_aphasia_co:
 	python -B src/stroke_cohort_w_aphasia_co.py
 
-stroke_cohort_w_aphasia_co_discharge:
-	python -B src/stroke_cohort_w_aphasia_co_discharge.py
+stroke_cohort_w_aphasia_co_vo:
+	python -B src/stroke_cohort_w_aphasia_co_vo.py
 
-visit_oc_possible_first_discharge:
-	python -B src/visit_oc_possible_first_discharge.py
+visit_oc_discharge:
+	python -B src/visit_oc_discharge.py
 
 visit_oc_first_discharge:
 	python -B src/visit_oc_first_discharge.py
+	
+visit_oc_second_discharge:
+	python -B src/visit_oc_second_discharge.py
 
 # Plot.
 plot_stroke_desc_concept:

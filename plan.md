@@ -60,24 +60,26 @@ Our project will establish stroke patient ‘paths’ through treatment, to furt
 
   1. [x] Proposal due Thursday 11/21
   2. [x] Meet before class on Thursday at 5pm
-  3. [] Meet on Sunday from 2pm - 4pm (online)
-     <br>
-     <br>
-     **Tasks:**
-
-  - Jaee
-  - Sally
-  - Alex
-
-- **Week 13** &nbsp; &nbsp; 11/25 - 12/1 &nbsp; &nbsp; &nbsp; **Prototype Due**
-  1. [ ] Submit Prototype on Tuesday, 11/26? this is an optional assignment
-  2. [ ] Meet on Sunday from 2pm - 4pm (online)
+  3. [x] Meet on Sunday from 2pm - 4pm (online)
          <br>
          <br>
          **Tasks:**
-  - Jaee
-  - Sally
-  - Alex
+
+  - Jaee - work on new query with conditiona_occurenece_id
+  - Sally - work on procedure codes
+  - Alex - work on db connections/queries and documentation
+
+- **Week 13** &nbsp; &nbsp; 11/25 - 12/1 &nbsp; &nbsp; &nbsp; **Prototype Due**
+  1. [ ] Submit Prototype on Tuesday, 11/26? this is an optional assignment
+  2. [ ] Meet with Bogden on Tuesday/Wednesday?
+  3. [ ] Meet with group on Wednesday afternoonn
+  4. [ ] Meet on Sunday from 2pm - 4pm (online)
+         <br>
+         <br>
+         **Tasks:**
+  - Jaee -
+  - Sally -
+  - Alex -
 - **Week 14** &nbsp; &nbsp; 12/2 - 12/8 &nbsp; &nbsp; &nbsp; **Presentation and Final Submission**
   1. [ ] Presentation on Thursday, 12/5
          <br>

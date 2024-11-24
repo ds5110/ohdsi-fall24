@@ -2,24 +2,27 @@ from utils import config, read_df, write_df, run_query
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-import discharge_to_concept_id
 
 
 con, work_schema = config()
-work_table = "visit_occurrence_stroke_cohort"
+omop_schema = "omop_cdm_53_pmtx_202203"
+work_table = "visit_occurrence_possible_first_discharge"
 work_table_result = "visit_occurrence_first_discharge"
-
 query = f"""
+WITH discharge_order AS
+(
+SELECT *,
+ROW_NUMBER() OVER
+ (
+ PARTITION BY person_id
+ ORDER BY visit_start_date ASC
+ ) AS row_number
+FROM {work_schema}.{work_table}
+)
 SELECT *
 INTO {work_schema}.{work_table_result}
-FROM {work_schema}.{work_table}
-WHERE (person_id, visit_concept_id)
-IN
-(
-SELECT person_id, discharge_to_concept_id
-FROM {work_schema}.stroke_cohort_w_aphasia_co_discharge
-)
+FROM discharge_order
+WHERE row_number = 1
 ;
 """
-
 run_query(con, query)

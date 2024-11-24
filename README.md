@@ -1,20 +1,30 @@
 # Project Guidelines
 
-## For us
+## Project Advisors
 
-### Helpful Links
+#### Rob Cavanaugh | Stakeholder
 
-1. Weekly OHDSI office hrs meeting with Rob on Mondays at 4pm: https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2MwMjRlNmQtZmE1Yy00MTdkLTg5NjYtMmU5NmU4MzY2N2Yx%40thread.v2/0?context=%7b%22Tid%22%3a%22a8eec281-aaa3-4dae-ac9b-9a398b9215e7%22%2c%22Oid%22%3a%22ea07185a-a575-4f7a-b4fa-49a3759624eb%22%7d
-2. OHDSI Northeastern website: https://ohdsi.northeastern.edu/
-3. The Book of OHDSI: https://ohdsi.github.io/TheBookOfOhdsi/
-4. OMOP Common Data Model: https://ohdsi.github.io/CommonDataModel/index.html
-5. Athena: https://athena.ohdsi.org/search-terms/start
-6.
+Resources provided:
 
-## How to get started with the database:
+- [List of speech language codes](https://northeastern-my.sharepoint.com/:w:/g/personal/r_cavanaugh_northeastern_edu/EffBdbdsX4hHokqQF2ryo9wBL7VERApjQ5klmlApGWdqzw?e=5w74PB)
 
-1. OHDSI Northeaster website: https://ohdsi.northeastern.edu/
-2. OHDSI Lab Log In:mhttps://ohdsi-lab.roux-ohdsi-prod.aws.northeastern.edu/#/login
-3. OHDSI @ Northeastern User Group: https://northeastern.sharepoint.com/sites/OHDSINortheastern/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group&p=true&ga=1&OR=Teams%2DHL&CT=1728075445537&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI1MC8yNDA4MTcwMDQyMSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D
+#### Casey Tilton | Data Science Capstone Student
 
-- User Guide Latest Version: https://northeastern.sharepoint.com/sites/OHDSINortheastern/Shared%20Documents/Forms/AllItems.aspx?ga=1&OR=Teams%2DHL&CT=1728075445537&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI1MC8yNDA4MTcwMDQyMSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D&id=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FUser%20Guide%2FLatest&viewid=e9534233%2D4089%2D42ed%2D8956%2D298feac7e723
+Resources provided:
+
+- [SQL query for cohort creation](https://northeastern-my.sharepoint.com/personal/tilton_ca_northeastern_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Ftilton%5Fca%5Fnortheastern%5Fedu%2FDocuments%2FMicrosoft%20Teams%20Chat%20Files%2Fstroke%5Fcohort%5Fcreation%2Esql&parent=%2Fpersonal%2Ftilton%5Fca%5Fnortheastern%5Fedu%2FDocuments%2FMicrosoft%20Teams%20Chat%20Files&ga=1)
+
+-
+
+## References
+
+#### OHDSI Specific
+
+1. [OHDSI Northeastern](https://ohdsi.northeastern.edu/)
+2. [The Book of OHDSI](https://ohdsi.github.io/TheBookOfOhdsi/)
+3. [OMOP Common Data Model](https://ohdsi.github.io/CommonDataModel/index.html)
+4. [OMOP CDM v5.4](https://ohdsi.github.io/CommonDataModel/cdm54.html)
+5. [OHDSI @ Northeastern | Sharepoint](https://northeastern.sharepoint.com/sites/OHDSINortheastern/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group&p=true&ga=1&OR=Teams%2DHL&CT=1728075445537&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI1MC8yNDA4MTcwMDQyMSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D)
+6. [Athena](https://athena.ohdsi.org/search-terms/start)
+7. [OHDSI User Guide](https://northeastern.sharepoint.com/sites/OHDSINortheastern/Shared%20Documents/Forms/AllItems.aspx?ga=1&OR=Teams%2DHL&CT=1728075445537&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI1MC8yNDA4MTcwMDQyMSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D&id=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FUser%20Guide%2FLatest&viewid=e9534233%2D4089%2D42ed%2D8956%2D298feac7e723)
+8. [OHDSI Lab Login](https://ohdsi-lab.roux-ohdsi-prod.aws.northeastern.edu/#/login)

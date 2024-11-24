@@ -11,7 +11,7 @@ omop_table = "visit_occurrence"
 discharge_code = list(discharge_to_concept_id.total_id.keys())
 discharge_code = ", ".join(str(x) for x in discharge_code)
 
-# create visit_occurrence table with only stroke cohorts with discharge.
+# create visit_occurrence table with only stroke cohorts.
 query = f"""
 SELECT *
 INTO {work_schema}.visit_occurrence_stroke_cohort

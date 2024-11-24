@@ -7,14 +7,9 @@ import matplotlib.pyplot as plt
 con, work_schema = config()
 omop_schema = "omop_cdm_53_pmtx_202203"
 omop_table = "concept"
-work_table = "stroke_cohort_w_aphasia"
+print("Enter the table to drop: ")
+work_table = input()
 query = f"""
-SELECT *
-FROM {omop_schema}.{omop_table}
-LIMIT 5
+DROP TABLE {work_schema}.{work_table}
 """
-# run_query(con, query)
-df = read_df(con, query)
-
-print(df.info())
-print(df)
+run_query(con, query)

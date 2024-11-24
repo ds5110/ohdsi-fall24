@@ -15,7 +15,7 @@ def config():
         port=int(config["redshift"]["port"]),
         user=config["redshift"]["user"],
         password=config["redshift"]["password"],
-        timeout=60,
+        # timeout=60,
     )
     work_schema = config["redshift"]["schema"]
     print(f"Connection is created. Your work schema is '{work_schema}'")

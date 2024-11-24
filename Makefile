@@ -45,6 +45,9 @@ plot_first_discharge:
 drop_table:
 	python -B src/drop_table.py
 
+read_table:
+	python -B src/read_table.py
+
 # Test tutorial files.
 test:
 	python -B src/test.py

@@ -9,7 +9,7 @@ import numpy as np
 con, work_schema = config()
 omop_schema = "omop_cdm_53_pmtx_202203"
 omop_table = "concept"
-work_table = "stroke_cohort_w_aphasia_co_discharge"
+work_table = "stroke_cohort_w_aphasia_co_vo"
 query = f"""
 SELECT *
 FROM {work_schema}.{work_table}

@@ -7,12 +7,14 @@ import matplotlib.pyplot as plt
 con, work_schema = config()
 work_table = "stroke_cohort_w_aphasia_co"
 work_table_2 = "visit_occurrence_stroke_cohort"
-work_table_result = "stroke_cohort_w_aphasia_co_discharge"
+work_table_result = "stroke_cohort_w_aphasia_co_vo"
 omop_schema = "omop_cdm_53_pmtx_202203"
 omop_table = "condition_occurrence"
 
 query = f"""
 SELECT {work_schema}.{work_table}.*,
+{work_schema}.{work_table_2}.visit_start_date,
+{work_schema}.{work_table_2}.visit_end_date,
 {work_schema}.{work_table_2}.discharge_to_concept_id
 INTO {work_schema}.{work_table_result}
 FROM {work_schema}.{work_table}

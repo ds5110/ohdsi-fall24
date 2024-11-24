@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 con, work_schema = config()
 omop_schema = "omop_cdm_53_pmtx_202203"
 work_table = "visit_occurrence_discharge"
-work_table_result = "visit_occurrence_first_discharge"
+work_table_result = "visit_occurrence_second_discharge"
 query = f"""
 WITH discharge_order AS
 (
@@ -22,7 +22,7 @@ FROM {work_schema}.{work_table}
 SELECT *
 INTO {work_schema}.{work_table_result}
 FROM discharge_order
-WHERE row_number = 1
+WHERE row_number = 2
 ;
 """
 run_query(con, query)

@@ -201,3 +201,9 @@ con.autocommit = False
 ```
 make test
 ```
+
+* There are also utility commands that you can input a name of tables in your work schema in the command line. You can read a table or drop(delete) a table from your work schema using following commands:
+```
+make read_table
+make drop_table
+```

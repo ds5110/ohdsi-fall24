@@ -23,6 +23,9 @@ stroke_cohort_w_aphasia_co:
 stroke_cohort_w_aphasia_co_discharge:
 	python -B src/stroke_cohort_w_aphasia_co_discharge.py
 
+visit_oc_possible_first_discharge:
+	python -B src/visit_oc_possible_first_discharge.py
+
 visit_oc_first_discharge:
 	python -B src/visit_oc_first_discharge.py
 

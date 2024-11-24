@@ -57,16 +57,27 @@ Our project will establish stroke patient ‘paths’ through treatment, to furt
          <br>
          <br>
 - **Week 12** &nbsp; &nbsp; 11/18 - 11/24 &nbsp; &nbsp; &nbsp; **Proposal Due**
-  1. [ ] Proposal due Thursday 11/21
-  2. [ ] Meet before class on Thursday at 5pm
-  3. [ ] Meet on Sunday from 2pm - 4pm (online)
-         <br>
-         <br>
+
+  1. [x] Proposal due Thursday 11/21
+  2. [x] Meet before class on Thursday at 5pm
+  3. [] Meet on Sunday from 2pm - 4pm (online)
+     <br>
+     <br>
+     **Tasks:**
+
+  - Jaee
+  - Sally
+  - Alex
+
 - **Week 13** &nbsp; &nbsp; 11/25 - 12/1 &nbsp; &nbsp; &nbsp; **Prototype Due**
   1. [ ] Submit Prototype on Tuesday, 11/26? this is an optional assignment
-  2. [ ] Meet on Saturday from 12pm - 2pm (online)
+  2. [ ] Meet on Sunday from 2pm - 4pm (online)
          <br>
          <br>
+         **Tasks:**
+  - Jaee
+  - Sally
+  - Alex
 - **Week 14** &nbsp; &nbsp; 12/2 - 12/8 &nbsp; &nbsp; &nbsp; **Presentation and Final Submission**
   1. [ ] Presentation on Thursday, 12/5
          <br>

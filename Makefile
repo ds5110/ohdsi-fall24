@@ -1,14 +1,9 @@
+# Create intermediate tables.
 inpatient_stroke:
 	python -B src/inpatient_stroke.py
 
 stroke_cohort_w_aphasia:
 	python -B src/stroke_cohort_w_aphasia.py
-
-plot_stroke_desc_concept:
-	python -B src/plot_stroke_desc_concept.py
-
-plot_has_aphasia:
-	python -B src/plot_has_aphasia.py
 
 stroke_cohort_w_aphasia_FALSE:
 	python -B src/stroke_cohort_w_aphasia_FALSE.py
@@ -19,12 +14,38 @@ stroke_cohort_w_aphasia_TRUE:
 stroke_ancestor:
 	python -B src/stroke_ancestor.py
 
+visit_oc_stroke_cohort:
+	python -B src/visit_oc_stroke_cohort.py
+
+stroke_cohort_w_aphasia_co:
+	python -B src/stroke_cohort_w_aphasia_co.py
+
+stroke_cohort_w_aphasia_co_discharge:
+	python -B src/stroke_cohort_w_aphasia_co_discharge.py
+
+# Plot.
+plot_stroke_desc_concept:
+	python -B src/plot_stroke_desc_concept.py
+
+plot_has_aphasia:
+	python -B src/plot_has_aphasia.py
+
 plot_stroke_type_aphasia_TRUE:
 	python -B src/plot_stroke_type_aphasia_TRUE.py
 
 plot_stroke_type_aphasia_FALSE:
 	python -B src/plot_stroke_type_aphasia_FALSE.py
 
+plot_first_discharge:
+	python -B src/plot_first_discharge.py
+	python -B src/plot_first_discharge_aphasia_TRUE.py
+	python -B src/plot_first_discharge_aphasia_FALSE.py
+
+# Utility.
+drop_table:
+	python -B src/drop_table.py
+
+# Test tutorial files.
 test:
 	python -B src/test.py
 

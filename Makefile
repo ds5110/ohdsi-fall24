@@ -44,14 +44,14 @@ condition_oc_discharge:
 condition_oc_first_discharge:
 	python -B src/condition_oc_first_discharge.py
 
-speech:
-	python -B src/speech.py
-	
-speech_stroke_cohort:
-	python -B src/speech_stroke_cohort.py
-
 visit_detail_stroke_cohort:
 	python -B src/visit_detail_stroke_cohort.py
+
+speech_therapy_count_dates:
+	python -B src/speech_therapy_count_dates.py
+
+plot_speech_therapy_aphasia:
+	python -B src/plot_speech_therapy_aphasia.py
 
 # Plot.
 plot_stroke_desc_concept:

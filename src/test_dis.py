@@ -9,9 +9,14 @@ con, work_schema = config()
 omop_schema = "omop_cdm_53_pmtx_202203"
 omop_table = "concept"
 work_table = "speech_11_24_943"
+work_table_2 = "stroke_cohort_w_aphasia"
 query = f"""
-SELECT DISTINCT person_id
+SELECT DISTINCT {work_schema}.{work_table}.person_id
 FROM {work_schema}.{work_table}
+LEFT JOIN {work_schema}.{work_table_2}
+ON {work_schema}.{work_table}.person_id
+= {work_schema}.{work_table_2}.person_id
+WHERE 
 ;
 """
 # run_query(con, query)

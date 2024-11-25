@@ -11,7 +11,7 @@ work_table = "stroke_cohort_w_aphasia"
 
 # Create the SQL query
 query = f"""
-SELECT 
+SELECT
     sc.person_id,
     COUNT(po.visit_occurrence_id) AS total_visits,
     MIN(po.procedure_date) AS first_procedure_date,

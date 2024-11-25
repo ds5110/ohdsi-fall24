@@ -35,6 +35,24 @@ visit_oc_first_discharge:
 visit_oc_second_discharge:
 	python -B src/visit_oc_second_discharge.py
 
+condition_oc_stroke_cohort:
+	python -B src/condition_oc_stroke_cohort.py
+
+condition_oc_discharge:
+	python -B src/condition_oc_discharge.py
+	
+condition_oc_first_discharge:
+	python -B src/condition_oc_first_discharge.py
+
+speech:
+	python -B src/speech.py
+	
+speech_stroke_cohort:
+	python -B src/speech_stroke_cohort.py
+
+visit_detail_stroke_cohort:
+	python -B src/visit_detail_stroke_cohort.py
+
 # Plot.
 plot_stroke_desc_concept:
 	python -B src/plot_stroke_desc_concept.py

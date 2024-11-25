@@ -7,12 +7,12 @@ import discharge_to_concept_id
 
 con, work_schema = config()
 omop_schema = "omop_cdm_53_pmtx_202203"
-omop_table = "visit_occurrence"
+omop_table = "condition_occurrence"
 
-# create visit_occurrence table with person_id from stroke cohorts.
+# create condition_occurrence table with person_id from stroke cohorts.
 query = f"""
 SELECT *
-INTO {work_schema}.visit_occurrence_stroke_cohort
+INTO {work_schema}.condition_occurrence_stroke_cohort
 FROM {omop_schema}.{omop_table}
 WHERE person_id
 IN

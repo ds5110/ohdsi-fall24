@@ -8,17 +8,18 @@ import numpy as np
 con, work_schema = config()
 omop_schema = "omop_cdm_53_pmtx_202203"
 omop_table = "concept"
-work_table = "visit_occurrence_first_discharge"
+work_table = "speech_11_24_943"
 query = f"""
-SELECT *
+SELECT DISTINCT person_id
 FROM {work_schema}.{work_table}
 ;
 """
 # run_query(con, query)
 df = read_df(con, query)
 print(df.info())
-col = "visit_concept_id"
-# df[col] = df[col].map(discharge_to_concept_id.total_id)
+print(len(df["person_id"].unique()))
+col = "condition_concept_id"
+df[col] = df[col].astype(str)
 first_discharge = df[col].unique()
 print(f"First discharge concept IDs are: {first_discharge}")
 print(f"There are {len(first_discharge)} types of discharge")

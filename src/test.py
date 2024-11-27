@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 con, work_schema = config()
 omop_schema = "omop_cdm_53_pmtx_202203"
 omop_table = "concept"
-work_table = "stroke_cohort_w_aphasia"
+# work_table = "stroke_cohort_w_aphasia"
 query = f"""
 SELECT *
 FROM {omop_schema}.{omop_table}

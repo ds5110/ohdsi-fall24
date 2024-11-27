@@ -1,4 +1,4 @@
-from utils import config, read_df
+from utils import config, read_df, write_df, run_query
 import pandas as pd
 from discharge_to_concept_id import total_id
 
@@ -6,6 +6,7 @@ from discharge_to_concept_id import total_id
 con, work_schema = config()
 work_table = "visit_occurrence_stroke_cohort"
 filter_table = "stroke_cohort_w_aphasia"
+table_result = "visit_occurrence_discharge_all"
 
 # SQL Query to fetch filtered visit occurrences
 query = f"""
@@ -15,11 +16,14 @@ SELECT v.person_id,
        v.visit_end_date, 
        v.discharge_to_concept_id,
        f.condition_start_date
+INTO {work_schema}.{table_result}
 FROM {work_schema}.{work_table} v
 LEFT JOIN {work_schema}.{filter_table} f
 ON v.person_id = f.person_id
 WHERE v.visit_end_date > f.condition_start_date;
 """
+
+run_query(con, query)
 
 # Execute the query and fetch the results into a Pandas DataFrame
 df = read_df(con, query)
@@ -69,8 +73,11 @@ df_wide = df_wide.reset_index()
 # Check the resulting DataFrame structure
 df_wide.info()
 
+
+"""
 # Save the DataFrame to a CSV file
 output_file = "visit_oc_all_discharge.csv"
 # df_wide.to_csv(output_file, index=False)
 
 # print(f"df_wide has been saved to {output_file}")
+"""

@@ -10,6 +10,7 @@ create_tables:
 	python -B src/stroke_cohort_w_aphasia_co.py
 	python -B src/stroke_cohort_w_aphasia_co_vo.py
 	python -B src/speech_therapy_count_dates.py
+	python -B src/visit_oc_discharge_all.py
 
 # Individual commands for creating intermediate tables.
 inpatient_stroke:
@@ -42,8 +43,12 @@ stroke_cohort_w_aphasia_co_vo:
 speech_therapy_count_dates:
 	python -B src/speech_therapy_count_dates.py
 
-new_visit_occ_5_discharge:
-	python -B src/new_visit_occ_5_discharge.py
+visit_oc_discharge_all:
+	python -B src/visit_oc_discharge_all.py
+
+# Analysis of first 5 discharges.
+analysis_visit_oc_5_discharge:
+	python -B src/analysis_visit_oc_5_discharge.py
 
 # Plot.
 plot_stroke_desc_concept:

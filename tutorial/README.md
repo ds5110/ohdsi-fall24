@@ -194,7 +194,7 @@ result = cursor.fetchall()
 ```
 redshift_connector.connection.commit()
 ```
-* If you want to autocommit your changes, you can use [.autocommit](https://docs.aws.amazon.com/redshift/latest/mgmt/python-connect-examples.html) method.
+* If you want to autocommit your changes, you can use [.autocommit](https://docs.aws.amazon.com/redshift/latest/mgmt/python-connect-examples.html) method. However, this is not a recommended format in our setup, since we want to know clearly what has been done to the database each time we run a .py file. Consider the autocommit as if a autosave that is hard to perform a 'ctrl+z' to undo the changes. Use the autocommit with your own risk.
 ```
 # Run a rollback
 con.rollback()
@@ -205,11 +205,13 @@ con.autocommit = False
 ```
 
 ## Use pre-defined functions
-* While you can understand and practice with the templates and above examples, we have created pre-defined functions that can be used in 'utils.py' file. You can use following 4 functions to process data in pandas data frame, and read and write tables in and out of your schema. Only reading is allowed for the omop schema.
+* While you can understand and practice with the templates and above examples, we have created pre-defined functions that can be used in 'utils.py' file. You can use following 4 functions to process data in pandas data frame, and read and write tables in and out of your work schema. Only reading is allowed for the omop schema.
   * config()
   * run_query()
   * write_df()
   * read_df()
+* The workflow is to read the configuration by 'config()', and then run your SQL query on 'run_query()' if you simply want to run a SQL query, 'write_df()' if you want to write your Pandas dataframe into an already existing table in your work schema and 'read_df()' if you want to read any tables in the database as a Pandas dataframe.
+* The functions are written in a way that it will ensure the connection created by 'config()' even if there was an error occured, so that you can fix your code and run it again on the same terminal window. This also means that, every time you call 'run_query()', 'write_df()' or 'read_df()', the connection will be closed. Thus, if you want to run any of these 3 functions multiple time within a same .py file, you need to create a new connection by calling 'config()' everytime prior to running one of the 3 functions.
 * 'src/test.py' can be used as a template of using these functions. It can be ran by following command:
 ```
 make test

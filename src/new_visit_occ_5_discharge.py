@@ -4,7 +4,7 @@ from discharge_to_concept_id import total_id
 
 # Configurations
 con, work_schema = config()
-work_table = "visit_occurrence"
+work_table = "visit_occurrence_stroke_cohort"
 filter_table = "stroke_cohort_w_aphasia"
 
 # SQL Query to fetch filtered visit occurrences
@@ -15,7 +15,7 @@ SELECT v.person_id,
        v.visit_end_date, 
        v.discharge_to_concept_id,
        f.condition_start_date
-FROM omop_cdm_53_pmtx_202203.{work_table} v
+FROM {work_schema}.{work_table} v
 LEFT JOIN {work_schema}.{filter_table} f
 ON v.person_id = f.person_id
 WHERE v.visit_end_date > f.condition_start_date;

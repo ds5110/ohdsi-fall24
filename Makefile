@@ -42,6 +42,8 @@ stroke_cohort_w_aphasia_co_vo:
 speech_therapy_count_dates:
 	python -B src/speech_therapy_count_dates.py
 
+src/new_visit_occ_5_discharge:
+	python -B src/new_visit_occ_5_discharge.py
 
 # Plot.
 plot_stroke_desc_concept:

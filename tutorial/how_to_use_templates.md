@@ -1,16 +1,10 @@
 # How to use the templates.
 
 - There are 4 templates available to learn how to access the OHDSI database using python.
-  - 'config_template.ini'
   - 'template_create_table.py'
   - 'template_delete_table.py'
   - 'template_pandas.py'
   - 'template_write_syn_cohort.py'
-
-## config_template.ini
-
-- This is [a template file](https://github.com/ds5110/project-corcoraq/tree/main/src/config_template.ini) to show you how to store all your credential for the redshift OHDSI database you recieved by an email into your 'config.ini.
-- You MUST add your 'config.ini' into your '.gitignore'. NEVER push your credentials to a public repo.
 
 ## template_create_table.py
 

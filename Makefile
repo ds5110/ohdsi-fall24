@@ -46,10 +46,6 @@ speech_therapy_count_dates:
 visit_oc_discharge_all:
 	python -B src/visit_oc_discharge_all.py
 
-# Analysis of first 5 discharges.
-analysis_visit_oc_5_discharge:
-	python -B src/analysis_visit_oc_5_discharge.py
-
 # Plot.
 plot_stroke_desc_concept:
 	python -B src/plot_stroke_desc_concept.py
@@ -70,6 +66,10 @@ plot_first_discharge:
 
 plot_speech_therapy_aphasia:
 	python -B src/plot_speech_therapy_aphasia.py
+
+# Analysis of first 5 discharges.
+analysis_visit_oc_5_discharge:
+	python -B src/analysis_visit_oc_5_discharge.py
 
 # Utility.
 drop_table:

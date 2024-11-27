@@ -10,7 +10,7 @@ In order to access the OHDSI database, several initial steps are required. The u
 
 These steps work in relation to one having access to OHDSI's Amazon Workspace.
 
-Follow each step in the [tutorial.md](tutorial/README.md) file in this repo. This repo is a quick tutorial of how to use python for the OHDSI database.
+Follow each step in the [tutorial](tutorial/README.md). This repo is a quick tutorial of how to use python for the OHDSI database.
 Steps include:
 
 1. AWS Setup

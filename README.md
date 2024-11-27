@@ -6,11 +6,11 @@ Should we include a brief version of the story here?
 
 In order to access the OHDSI database, several initial steps are required. The user must complete CITI certifications specified by Northeastern's Observational Health Data Sciences and Informatics Center (OHDSI). After the certifications are completed, the user will follow OHDSI's [User Guide](https://northeastern.sharepoint.com/sites/OHDSINortheastern/Shared%20Documents/Forms/AllItems.aspx?ga=1&OR=Teams%2DHL&CT=1728075445537&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI1MC8yNDA4MTcwMDQyMSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D&id=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FUser%20Guide%2FLatest&viewid=e9534233%2D4089%2D42ed%2D8956%2D298feac7e723) to onboard onto OHDSI's dashboard and then set up the virtual desktop with AWS Workspaces. The primary tutorials provided for environment set up are in R so we created a tutorial to set up an enviroment using Python. Details are included below.
 
-## Step 0
+## Step 0: Setup environment
 
 These steps work in relation to one having access to OHDSI's Amazon Workspace.
 
-Follow each step in the [tutorial.md](tutorial/tutorial.md) file in this repo.
+Follow each step in the [tutorial.md](tutorial/README.md) file in this repo. This repo is a quick tutorial of how to use python for the OHDSI database.
 Steps include:
 
 1. AWS Setup
@@ -24,45 +24,62 @@ Steps include:
 
 <small>_Refer to [config_template.ini](/tutorial/config_template.ini) and [how_to_use_templates.md](/tutorial/how_to_use_templates.md) for additional help._</small>
 
-## Step 1
+## Step 1: Create intermediate tables
 
-Run Casey's query to create the stroke cohort?
-
-```
- make tbd
-```
-
-## Step 2
-
-tbd
+We will create various intermediate tables in your own schema. This is done because directly using tables in 'omop_cdm_53_pmtx_202203' schema, which is the original data, everytime an analysis is performed is extremely slow, since the number of data points in those tables are in a scale of billion. We will use the stroke cohort definition created by Casey Tilton as an index table to filter out any relevant tables from the omop schema and write them into your work schema. As a result, you will be working on tables that are in a scale of million in maximum. Run following command on your Anaconda PowerShell Prompt. Make sure you are at your  directory which cloned this repo:
 
 ```
- make tbd
+ make reate_tables
 ```
 
-## Step 3
+This command is going to run 11 .py files in a correct order. Each of the .py files correspond to each intermediate table that is created. Notice that some of the intermediate tables will require other intermediate tables to be created first, so the order of running these .py files is very important. Now open DBeaver, and check your work space. You must have following tables in your schema now:
 
-tbd
+<br>
+<img src="../figs/work_schema_tables.png.png" width=900>
+<br>
 
-```
- make tbd
-```
+Note that your Object ID won't match these exactly. Important part is if the Row Count Estimate is the same, and make sure none of them are empty. You can check if the tables are empty by double clicking the table name and check the 'Data' tab.
 
-## Step 4
-
-tbd
+If you see any error, please refer to the 'Makefile' and try running .py file individually. For example, if you had an error message while 'stroke_ancestor' table is being created, try running following command:
 
 ```
- make tbd
+make stroke_ancestor
 ```
 
-## Step 5
+This is going to run the 'stroke_ancestor.py' file only, and you can debug by opening the 'stroke_ancestor.py' file and read through the code.
 
-tbd
+## Step 2: Plotting
+
+Following make commands can be used in your Anaconda PowerShell Prompt to plot the figures we have in this repo:
 
 ```
- make tbd
+make plot_stroke_desc_concept
+
+make plot_has_aphasia
+
+make plot_stroke_type_aphasia_TRUE
+
+make plot_stroke_type_aphasia_FALSE
+
+make plot_first_discharge
+
+make plot_speech_therapy_aphasia
 ```
+
+'make plot_first_discharge' will run 3 .py files, while other commands will only run one .py file at a time.
+
+Make sure that you get same plots as we did in our [EDA](docs/EDA.md).
+
+## Step 3: Analysis of discharge path
+
+The actual analysis of discharge paths of stroke patients are done by following command:
+
+```
+ make analysis_visit_oc_5_discharge
+```
+
+This analysis is done very simply to provide a frame of what to work on next regarding discharge paths of stroke patients. Any user who wants to do a further analysis regarding discharge paths of stroke patients may use this result as a beginning point.
+
 
 ## Lessons Learned
 

@@ -28,7 +28,9 @@ df["discharge_to_concept_id"] = df["discharge_to_concept_id"].map(
 )
 first_discharge = np.sort(df["discharge_to_concept_id"].unique())
 print(f"First discharge concept IDs are: {first_discharge}")
-print(f"There are {len(first_discharge)} types of discharge")
+print(
+    f"There are {len(first_discharge)} types of discharge types for stroke patients with no aphasia"
+)
 
 # discharged grouped column mapped
 df["discharge_grouped"] = df["discharge_grouped"].map(

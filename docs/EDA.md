@@ -1,28 +1,27 @@
 # Exploratory Data Analysis (EDA)
 
-# Setup
+## Setup
 
-- Read [tutorial](tutorial.md) to setup your environment.
-- [how_to_use_templates](how_to_use_templates.md) teaches you how to use python to access redshift database. You can use dbeaver as a visualization tool with it.
+- Follow the steps in [README](../README.md) to obtain all intermediate tables and figures that are being used here.
 
-## Create intermediate tables
+## Conditions for intermediate tables
 
-- These SQL codes for the intermediate tables were provided by Casey Tilton.
-- Following command will create a table 'inpatient_stroke' into your work schema:
+- inpatient_stroke(created by inpatient_stroke.py): The SQL query is defined by Casey Tilton. Refer to his work for more details.
+- stroke_cohort_w_aphasia(created by stroke_cohort_w_aphasia.py): The SQL query is defined by Casey Tilton. Refer to his work for more details.
+- stroke_cohort_w_aphasia_co(created by stroke_cohort_w_aphasia_co.py): added columns of 'visit_occurrence_id', 'visit_detail_id' and 'provider_id' by joining the original 'condition_occurrence' table.
+- stroke_cohort_w_aphasia_co_vo(created by stroke_cohort_w_aphasia_co_vo.py): added columns of 'visit_start_date', 'visit_end_date' and 'discharge_to_concept_id' by joing the original 'visit_occurrence' table.
+- stroke_cohort_w_aphasia_FALSE(created by stroke_cohort_w_aphasia_FALSE.py): Filtered 'stroke_cohort_w_aphasia' by condition 'has_aphahsia = 0'
+- stroke_cohort_w_aphasia_TRUE(created by stroke_cohort_w_aphasia_TRUE.py): Filtered 'stroke_cohort_w_aphasia' by condition 'has_aphahsia = 1'
+- stroke_ancestor(created by stroke_ancestor.py): Filtered original concept_ancestor table by stroke codes, so this table has only ancestor-descendant relationship of 7 ancestor stroke codes.
+- discharge_ancestor(created by discharge_ancestor.py): Filtered original concept_ancestor table by visit codes of distinct discharge_to_concept_id in 'stroke_cohort_w_aphasia_co_vo', so this table has only ancestor-descendant relationship of 16 visit codes representing discharge paths.
+- visit_oc_stroke_cohort(created by visit_oc_stroke_cohort.py): Filterd the original visit_occurrence table by person_id in 'stroke_cohort_w_aphasia'.
+- visit_oc_discharge_all(created by visit_oc_discharge_all.py): Filtered 'visit_occurrence_stroke_cohort' by picking only events with 'visit_end_date' > 'condition_end_data'.
+- speech_therapy_count_dates(created by speech_therapy_count_dates.py): Join the original 'procedure_occurrence' table and 'stroke_cohort_w_aphasia' table, and filter it by speech therapy codes.
 
-```
-make inpatient_stroke
-```
+## Preliminary Analysis for reproducibility
 
-- Following command will create a table 'stroke_cohort_w_aphasia' into your work schema:
-
-```
-make stroke_cohort_w_aphasia
-```
-
-## Preliminary Analysis
-
-- Run following command to get table information and figures from 'stroke_cohort_w_aphasia':
+- All of the results in here can be compared with your results to ensure the reproducibility of the repo.
+- Running following command will return you table information and figures from 'stroke_cohort_w_aphasia':
 
 ```
 make plot_stroke_desc_concept
@@ -51,6 +50,19 @@ dtypes: int64(6), object(4)
 
 - The number of data points are reduced to 67,128, since we are only looking into datapoints that are 'inpatient' and 'strokes'. This is much manageable size of data now.
 
+- You will also see every descendant concept ID in this dataframe in the command window:
+```
+Descendant concept ID in the stroke cohort is:
+[ 4017107   443454  4134162  4176892  4110192 43530674  4148906 43530727
+   444197  4306943  4319328  4043731  4049659  4111709  4110190  4144154
+  4006294 45772786 45767658  4108356  4110189   372924  4110186 42535425
+   444198  4111716 42873157  4048278  4249574 46270031  4071732 43530851
+   437106 37016924   260841 40479572  4048277  4111708  4111717  4112023
+  4045738   444196  4108952  4046360   436430  4111714   434155 46273649
+  4045737  4345688]
+  ```
+  - You can check if they are all stroke related codes.
+
 <br>
 <img src="../figs/stroke_desc_concept_id.png" width=900>
 <br>
@@ -63,7 +75,26 @@ dtypes: int64(6), object(4)
 - Run following command to get a figures to show the rate of aphasia in 'stroke_cohort_w_aphasia':
 
 ```
-make plot_stroke_desc_concept
+make plot_has_aphasia
+```
+- Following info will be shown in the command window:
+```
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 67128 entries, 0 to 67127
+Data columns (total 10 columns):
+ #   Column                         Non-Null Count  Dtype
+---  ------                         --------------  -----
+ 0   condition_occurrence_id        67128 non-null  int64
+ 1   person_id                      67128 non-null  int64
+ 2   condition_concept_id           67128 non-null  int64
+ 3   condition_start_date           67128 non-null  object
+ 4   condition_end_date             67128 non-null  object
+ 5   row_num                        67128 non-null  int64
+ 6   observation_period_start_date  67128 non-null  object
+ 7   observation_period_end_date    67128 non-null  object
+ 8   observation_period_id          67128 non-null  int64
+ 9   has_aphasia                    67128 non-null  int64
+dtypes: int64(6), object(4)
 ```
 <br>
 <img src="../figs/aphasia_dist.png" width=600>
@@ -73,38 +104,39 @@ make plot_stroke_desc_concept
   <br>
   <br>
 
-
-- Run following command to create a table 'stroke_cohort_w_aphasia_FALSE':
-
-```
-make stroke_cohort_w_aphasia_FALSE
-```
-
-- Run following command to create a table 'stroke_cohort_w_aphasia_TRUE':
-
-```
-make stroke_cohort_w_aphasia_TRUE
-```
-- Now we have 2 tables that are separating 'stroke_cohort_w_aphasia' by whether the patients have aphasia or not.
-
-
-- Run following command to create a table 'stroke_ancestor':
-
-```
-make stroke_ancestor
-```
-- This table shows all the descendant concept id of the 7 stroke codes.
-
 - Run following command to get information and figures for the 7 stroke types of stroke cohorts with aphasia:
-
 ```
 make plot_stroke_type_aphasia_TRUE
 ```
+- Following info will be shown in the command window:
+```
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 12388 entries, 0 to 12387
+Data columns (total 14 columns):
+ #   Column                         Non-Null Count  Dtype
+---  ------                         --------------  -----
+ 0   condition_occurrence_id        12388 non-null  int64
+ 1   person_id                      12388 non-null  int64
+ 2   condition_concept_id           12388 non-null  int64
+ 3   condition_start_date           12388 non-null  object
+ 4   condition_end_date             12388 non-null  object
+ 5   row_num                        12388 non-null  int64
+ 6   observation_period_start_date  12388 non-null  object
+ 7   observation_period_end_date    12388 non-null  object
+ 8   observation_period_id          12388 non-null  int64
+ 9   has_aphasia                    12388 non-null  int64
+ 10  ancestor_concept_id            12388 non-null  int64
+ 11  descendant_concept_id          12388 non-null  int64
+ 12  min_levels_of_separation       12388 non-null  int64
+ 13  max_levels_of_separation       12388 non-null  int64
+dtypes: int64(10), object(4)
+```
+- As you can see, there are 12,388 stroke patients with aphasia.
 <br>
 <img src="../figs/stroke_type_aphasia_TRUE.png" width=900>
 <br>
 
-- As you can see '443454' code, which is Cerebral infarction, is still the most common case.
+- As you can see '443454' code, which is Cerebral infarction, is the most common case. One of the stroke code is not present.
   <br>
   <br>
 
@@ -113,13 +145,131 @@ make plot_stroke_type_aphasia_TRUE
 ```
 make plot_stroke_type_aphasia_FALSE
 ```
+- Following info will be shown in the command window:
+```
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 63820 entries, 0 to 63819
+Data columns (total 14 columns):
+ #   Column                         Non-Null Count  Dtype
+---  ------                         --------------  -----
+ 0   condition_occurrence_id        63820 non-null  int64
+ 1   person_id                      63820 non-null  int64
+ 2   condition_concept_id           63820 non-null  int64
+ 3   condition_start_date           63820 non-null  object
+ 4   condition_end_date             63820 non-null  object
+ 5   row_num                        63820 non-null  int64
+ 6   observation_period_start_date  63820 non-null  object
+ 7   observation_period_end_date    63820 non-null  object
+ 8   observation_period_id          63820 non-null  int64
+ 9   has_aphasia                    63820 non-null  int64
+ 10  ancestor_concept_id            63820 non-null  int64
+ 11  descendant_concept_id          63820 non-null  int64
+ 12  min_levels_of_separation       63820 non-null  int64
+ 13  max_levels_of_separation       63820 non-null  int64
+dtypes: int64(10), object(4)
+```
+- As you can see, there are 63,819 stroke patients with aphasia.
 <br>
 <img src="../figs/stroke_type_aphasia_FALSE.png" width=900>
 <br>
 
-- As you can see '443454' code, which is Cerebral infarction, is still the most common case.
+- As you can see '443454' code, which is Cerebral infarction, is still the most common case. One of the stroke is not present. One of the stroke code is still not present.
   <br>
   <br>
+
+## Analysis of discharge paths related to aphasia
+
+- Run following command to get a plot of types of the first discharge paths for all stroke patients and with or without aphasia:
+```
+make plot_first_discharge
+```
+- This command will create 3 plots at a time. You have to close the window for a plot for the next .py file to be run. The command window will display following:
+```
+python -B src/plot_first_discharge.py
+Connection is created. Your work schema is 'work_oh_jaee211'
+Executed query:
+
+SELECT *
+FROM work_oh_jaee211.stroke_cohort_w_aphasia_co_vo
+;
+
+Connection is closed.
+First discharge concept IDs are: ['1: Home' '1: Home Health Agency' '1: Home Visit' '1: Outpatient Visit'
+ '2: Comprehensive Inpatient Rehabilitation Facility'
+ '2: Rehabilitation Hospital' '3: Long Term Care Hospital'
+ '3: Nursing Facility' '3: Skilled Nursing Facility'
+ '4: Critical Access Hospital' '4: Hospital-Swing Beds'
+ '4: Inpatient Hospital' '5: Hospice'
+ '5: Intermediate Mental Care Facility' '5: Prison/Correctional Facility'
+ '5: Psychiatric Hospital']
+There are 16 types of discharge types for all stroke patients
+python -B src/plot_first_discharge_aphasia_TRUE.py
+Connection is created. Your work schema is 'work_oh_jaee211'
+Executed query:
+
+SELECT *
+FROM work_oh_jaee211.stroke_cohort_w_aphasia_co_vo
+WHERE has_aphasia = 1
+;
+
+Connection is closed.
+First discharge concept IDs are: ['1: Home' '1: Home Health Agency' '1: Home Visit' '1: Outpatient Visit'
+ '2: Comprehensive Inpatient Rehabilitation Facility'
+ '2: Rehabilitation Hospital' '3: Long Term Care Hospital'
+ '3: Nursing Facility' '3: Skilled Nursing Facility'
+ '4: Critical Access Hospital' '4: Hospital-Swing Beds'
+ '4: Inpatient Hospital' '5: Hospice'
+ '5: Intermediate Mental Care Facility' '5: Psychiatric Hospital']
+There are 15 types of discharge types for stroke patients with aphasia
+python -B src/plot_first_discharge_aphasia_FALSE.py
+Connection is created. Your work schema is 'work_oh_jaee211'
+Executed query:
+
+SELECT *
+FROM work_oh_jaee211.stroke_cohort_w_aphasia_co_vo
+WHERE has_aphasia = 0
+;
+
+Connection is closed.
+First discharge concept IDs are: ['1: Home' '1: Home Health Agency' '1: Home Visit' '1: Outpatient Visit'
+ '2: Comprehensive Inpatient Rehabilitation Facility'
+ '2: Rehabilitation Hospital' '3: Long Term Care Hospital'
+ '3: Nursing Facility' '3: Skilled Nursing Facility'
+ '4: Critical Access Hospital' '4: Hospital-Swing Beds'
+ '4: Inpatient Hospital' '5: Hospice'
+ '5: Intermediate Mental Care Facility' '5: Prison/Correctional Facility'
+ '5: Psychiatric Hospital']
+There are 16 types of discharge types for stroke patients with no aphasia
+```
+- As you can see there are total of 16 discharge types for stroke patients. Discharge to 'Prison/Correctional Facility' was not present within stroke patients with aphasia.
+
+<img src="../figs/first_discharge.png" width=900>
+
+- Most of the patients have returned to home after the stroke event.
+- 'Skilled Nursing Facility' and 'Rehavilitation Hospital' were the next most common discharge path for the stroke patients.
+- Other discharge paths are not likely to be the first discharge paths.
+
+<img src="../figs/first_discharge_aphasia_TRUE.png" width=900>
+<img src="../figs/first_discharge_aphasia_FALSE.png" width=900>
+
+- Patients who were discharged to 'Inpatient Hospital' mostly had aphasia.
+- Patients with aphasia are more likely to be discharged to 'Skilled Nursing Facility' and 'Rehavilitation Hospital' after the first stroke event.
+- Patients with no aphasia have higher rate of returning home after the first stroke event.
+
+
+- Run following command to get a plot of total visits of speech therapy per person of stroke patients with or without aphasia:
+```
+make plot_speech_therapy_aphasia
+```
+<img src="../figs/speech_therapy_aphasia.png" width=900>
+
+- Patients with aphasia require more speech therapies in average, which is an expected result.
+
+## Analysis of discharge paths
+- Following command will run an analysis of first 5 discharge paths:
+```
+make analysis_visit_oc_5_discharge
+```
 
 # Further Proposal Notes
 

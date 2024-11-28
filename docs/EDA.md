@@ -248,7 +248,12 @@ There are 16 types of discharge types for stroke patients with no aphasia
 - 'Skilled Nursing Facility' and 'Rehavilitation Hospital' were the next most common discharge path for the stroke patients.
 - Other discharge paths are not likely to be the first discharge paths.
 
+**Plots with Aphasia**
 <img src="../figs/first_discharge_aphasia_TRUE.png" width=900>
+<img src="../figs/first_discharge_aphasia_TRUE_grouped.png" width=500>
+<br>
+<br>
+**Plots with No Aphasia**
 <img src="../figs/first_discharge_aphasia_FALSE.png" width=900>
 <img src="../figs/first_discharge_aphasia_FALSE_grouped.png" width=500>
 

@@ -36,9 +36,9 @@ print(
 df["discharge_grouped"] = df["discharge_grouped"].map(
     discharge_to_concept_id.group_mapping)
 
-#fig, ax = plt.subplots()
+# Plot 1
 plt.figure(figsize=(12,10))
-sns.histplot(data=df, x="discharge_to_concept_id", color="#2292B5", shrink=0.9)
+sns.histplot(data=df, x="discharge_to_concept_id", color="#00246D", shrink=0.9)
 plt.xticks(rotation=90)
 plt.xlabel("Discharge to Concept Id", fontsize=14, labelpad=20)
 plt.ylabel("Count", fontsize=14, labelpad=20)
@@ -47,11 +47,11 @@ plt.tight_layout()
 plt.savefig("figs/first_discharge_aphasia_FALSE.png", bbox_inches="tight")
 plt.show()
 
+# Plot 2 - Grouped
 plt.figure(figsize=(10,10))
 sns.histplot(data=df, x="discharge_grouped", hue="discharge_grouped", palette="ocean", shrink=0.9)
-#sns.histplot(data=df, x=df["discharge_to_concept_id"].map(group_mapping), shrink=0.9)
 plt.xticks(rotation=90)
-plt.xlabel("Discharge to by Categories", fontsize=14, labelpad=20)
+plt.xlabel("Discharge_to by Categories", fontsize=14, labelpad=20)
 plt.ylabel("Count", fontsize=14, labelpad=20)
 plt.title("Grouped by category", fontsize=16, weight="bold", pad=15, loc="center")
 plt.savefig("figs/first_discharge_aphasia_FALSE_grouped.png", bbox_inches="tight")

@@ -172,7 +172,6 @@ dtypes: int64(10), object(4)
 <br>
 <img src="../figs/stroke_type_aphasia_FALSE.png" width=900>
 <br>
-
 - As you can see '443454' code, which is Cerebral infarction, is still the most common case. One of the stroke is not present. One of the stroke code is still not present.
   <br>
   <br>
@@ -251,6 +250,7 @@ There are 16 types of discharge types for stroke patients with no aphasia
 
 <img src="../figs/first_discharge_aphasia_TRUE.png" width=900>
 <img src="../figs/first_discharge_aphasia_FALSE.png" width=900>
+<img src="../figs/first_discharge_aphasia_FALSE_grouped.png" width=500>
 
 - Patients who were discharged to 'Inpatient Hospital' mostly had aphasia.
 - Patients with aphasia are more likely to be discharged to 'Skilled Nursing Facility' and 'Rehavilitation Hospital' after the first stroke event.

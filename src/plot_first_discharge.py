@@ -17,18 +17,21 @@ FROM {work_schema}.{work_table}
 """
 # run_query(con, query)
 df = read_df(con, query)
-print(df.info())
+# print(df.info())
 df["discharge_to_concept_id"] = df["discharge_to_concept_id"].map(
     discharge_to_concept_id.total_id
 )
 first_discharge = np.sort(df["discharge_to_concept_id"].unique())
 print(f"First discharge concept IDs are: {first_discharge}")
-print(f"There are {len(first_discharge)} types of discharge")
+print(
+    f"There are {len(first_discharge)} types of discharge types for all stroke patients"
+)
 
 # Plot.
 fig, ax = plt.subplots()
 sns.histplot(data=df, x="discharge_to_concept_id", shrink=0.9)
 ax.tick_params(axis="x", rotation=90)
+plt.title("First discharge paths of all stroke patients")
 plt.tight_layout()
 plt.savefig("figs/first_discharge.png")
 plt.show()

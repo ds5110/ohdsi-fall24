@@ -38,7 +38,7 @@ plt.bar(
         cnt_visit_aphasia_false / cnt_patient_aphasia_false,
     ],
 )
-plt.ylabel("Total visits of speech therapy per person", fontsize=12, labelpad=15)
+plt.ylabel("total visits of speech therapy per person")
 plt.tight_layout()
 plt.savefig("figs/speech_therapy_aphasia.png")
 plt.show()

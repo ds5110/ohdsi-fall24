@@ -27,11 +27,13 @@ print(
     f"There are {len(first_discharge)} types of discharge types for all stroke patients"
 )
 
-# Plot.
-fig, ax = plt.subplots()
-sns.histplot(data=df, x="discharge_to_concept_id", shrink=0.9)
-ax.tick_params(axis="x", rotation=90)
-plt.title("First discharge paths of all stroke patients")
+# Plot 1
+plt.figure(figsize=(12,10))
+sns.histplot(data=df, x="discharge_to_concept_id", color="#2292B5", shrink=0.9)
+plt.xticks(rotation=90)
+plt.xlabel("Discharge to Concept Id", fontsize=14, labelpad=20)
+plt.ylabel("Count", fontsize=14, labelpad=20)
+plt.title("First discharge paths of all stroke patients", fontsize=16, weight="bold", pad=15, loc="center")
 plt.tight_layout()
-plt.savefig("figs/first_discharge.png")
+plt.savefig("figs/first_discharge.png", bbox_inches="tight")
 plt.show()

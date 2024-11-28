@@ -19,6 +19,9 @@ WHERE has_aphasia = 0
 # run_query(con, query)
 df = read_df(con, query)
 
+# create copy of discharge_to column
+df["discharge_grouped"] = df["discharge_to_concept_id"].copy()
+
 print(df.info())
 df["discharge_to_concept_id"] = df["discharge_to_concept_id"].map(
     discharge_to_concept_id.total_id
@@ -27,10 +30,27 @@ first_discharge = np.sort(df["discharge_to_concept_id"].unique())
 print(f"First discharge concept IDs are: {first_discharge}")
 print(f"There are {len(first_discharge)} types of discharge")
 
-# Plot.
-fig, ax = plt.subplots()
-sns.histplot(data=df, x="discharge_to_concept_id", shrink=0.9)
-ax.tick_params(axis="x", rotation=90)
+# discharged grouped column mapped
+df["discharge_grouped"] = df["discharge_grouped"].map(
+    discharge_to_concept_id.group_mapping)
+
+#fig, ax = plt.subplots()
+plt.figure(figsize=(12,10))
+sns.histplot(data=df, x="discharge_to_concept_id", hue="discharge_grouped", palette="ocean", shrink=0.9)
+plt.xticks(rotation=90)
+plt.xlabel("Discharge to Concept Id", fontsize=14, labelpad=20)
+plt.ylabel("Count", fontsize=14, labelpad=20)
+plt.title("First discharge paths of stroke patients with no aphasia", fontsize=16, weight="bold", pad=15, loc="center")
 plt.tight_layout()
-plt.savefig("figs/first_discharge_aphasia_FALSE.png")
+plt.savefig("figs/first_discharge_aphasia_FALSE.png", bbox_inches="tight")
+plt.show()
+
+plt.figure(figsize=(10,10))
+sns.histplot(data=df, x="discharge_grouped", hue="discharge_grouped", palette="ocean", shrink=0.9)
+#sns.histplot(data=df, x=df["discharge_to_concept_id"].map(group_mapping), shrink=0.9)
+plt.xticks(rotation=90)
+plt.xlabel("Discharge to by Categories", fontsize=14, labelpad=20)
+plt.ylabel("Count", fontsize=14, labelpad=20)
+plt.title("Grouped by category", fontsize=16, weight="bold", pad=15, loc="center")
+plt.savefig("figs/first_discharge_aphasia_FALSE_grouped.png", bbox_inches="tight")
 plt.show()

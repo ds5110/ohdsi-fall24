@@ -31,3 +31,10 @@ total_id = {
     **acute_care_id,
     **other_id,
 }
+group_mapping = {
+    **{key: "Home" for key in home_id},
+    **{key: "Inpatient Rehab" for key in inpatient_rehab_id},
+    **{key: "Skilled Nursing" for key in skilled_nursing_id},
+    **{key: "Acute Care" for key in acute_care_id},
+    **{key: "Other" for key in other_id}
+}

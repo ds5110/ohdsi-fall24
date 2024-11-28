@@ -37,7 +37,7 @@ We will create various intermediate tables in your own schema. This is done beca
 This command is going to run 11 .py files in a correct order. Each of the .py files correspond to each intermediate table that is created. Notice that some of the intermediate tables will require other intermediate tables to be created first, so the order of running these .py files is very important. Now open DBeaver, and check your work space. You must have following tables in your schema now:
 
 <br>
-<img src="../figs/work_schema_tables.png" width=900>
+<img src="figs/work_schema_tables.png" width=900>
 <br>
 
 Note that your Object ID won't match these exactly. Important part is if the Row Count Estimate is the same, and make sure none of them are empty. You can check if the tables are empty by double clicking the table name and check the 'Data' tab.

@@ -212,6 +212,7 @@ con.autocommit = False
   * read_df()
 * The workflow is to read the configuration by 'config()', and then run your SQL query on 'run_query()' if you simply want to run a SQL query, 'write_df()' if you want to write your Pandas dataframe into an already existing table in your work schema and 'read_df()' if you want to read any tables in the database as a Pandas dataframe.
 * The functions are written in a way that it will ensure the connection created by 'config()' even if there was an error occured, so that you can fix your code and run it again on the same terminal window. This also means that, every time you call 'run_query()', 'write_df()' or 'read_df()', the connection will be closed. Thus, if you want to run any of these 3 functions multiple time within a same .py file, you need to create a new connection by calling 'config()' everytime prior to running one of the 3 functions.
+* Each of the functions will display if the connection is created, what query has been run on the database and if the connection is closed on the command window.
 * 'src/test.py' can be used as a template of using these functions. It can be ran by following command:
 ```
 make test

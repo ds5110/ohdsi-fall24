@@ -1,6 +1,8 @@
 # Identification of Patterns in Stroke Care Transitions using [OHDSI](https://ohdsi.northeastern.edu/) Pharmetrics+ data
 
-Should we include a brief version of the story here?
+Stroke survivors receive rehabilitation services (physical therapy, occupational therapy, and/or speech-language therapy) in different locations at different rates in the period following their stroke.  Differences between levels of care location as well as type of care delivered has been identified as a path to understanding the differences in the quality of stroke post-acute treatment in order to optimize stroke outcomes. 
+
+Our hypothesis is that it is possible to use OHDSI data to trace the various paths that stroke survivors take through post-incident care so that the efficacy and efficiency of the different care transitions can be evaluated.  We were able to create a proof-of-concept process on a limited cohort (stroke patients with aphasia, with patient IDs attached to their post-acute speech therapy treatments and treatment locations)  to show it is possible to trace the different paths through treatment post-stroke.  To replicate our process, please follow the steps below. Note that for true reproducability it is necessary to access the AWS for the Northeastern OHDSI Center.
 
 ## OHDSI + Setup
 
@@ -91,21 +93,29 @@ This analysis is done very simply to provide a frame of what to work on next reg
 
    As noted in our [docs/README.md](docs/README.md), there was a learning curve with the complexity of the OHDSI database since the data is drawn from real-world interactions and the schema connections can be hard to navigate without a medical knowledge. A medical condition can have various codes associated with it, and these codes can also change throughout a patient's care timeline.
 
-## Next Steps - TO DO
+## Next Steps  
 
-1. Briefly describe and prioritize some next steps that you would take given sufficient time/resources.
+The next step would be to create cohorts for all potential paths, e.g., aphasia versus no aphasia diagnosis, different types of treatment, and different locations.  We would recommend: 
 
-2. Prioritize these somehow. For example: those that should be easy/hard, those that require more data, etc
+1. Identifying the best markers/concept_IDs for physical and occupational therapy 
 
-Small next steps
+2. Matching those therapies to patient_IDs from the master stroke incidence file 
 
-- to-do
-- to-do
+3. Creating a table with location by visit_start_date, visit_end_date, and discharge_to location for each patient_ID (note that by definition of the initial cohort, the first location is always emergency room and/or inpatient hospital stay) 
 
-Longer term next steps
+4. Appending location by date to each therapy to each patient_ID
 
-- to-do
-- to-do
+Analysis can be performed on the resulting table to find: 
+
+- Frequency of therapies, overall and by location 
+
+- Duration (in days) of therapies, overall and by location 
+
+Given that Northeastern University’s ODHSI database is incomplete, there is additional data that would be helpful to simplify the process, though it is possible to complete the analysis without this data: 
+
+- Comprehensive provider_specialty data 
+
+- Care_site_type and concept_id in the care_site table 
 
 ## Attributions
 

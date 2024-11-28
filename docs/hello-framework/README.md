@@ -1,4 +1,4 @@
-# Hello Framework - (in the Works - Alex)
+# Hello Framework - ( in the Works - Alex )
 
 This is an [Observable Framework](https://observablehq.com/framework/) app. To install the required dependencies, run:
 

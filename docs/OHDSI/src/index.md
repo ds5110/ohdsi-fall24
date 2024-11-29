@@ -4,7 +4,7 @@ toc: false
 
 <div class="hero">
   <h1>Pathways in Stroke Care</h1>
-  <h2>Identification of Patterns in Stroke Care Transitions, using OHDSI Pharmetrics+ data</h2>
+  <h2>Identification of Patterns in Stroke Care Transitions, using OHDSI Pharmetrics+ Data</h2>
 </div>
 
 <div class="grid grid-cols-2" style="grid-auto-rows: 504px;">
@@ -61,8 +61,16 @@ Here are some ideas of things you could try…
   <div class="card">
     Ask for help, or share your work or ideas, on our <a href="https://github.com/observablehq/framework/discussions">GitHub discussions</a>.
   </div>
-  <div class="card">
-    Visit <a href="https://github.com/observablehq/framework">Framework on GitHub</a> and give us a star. Or file an issue if you’ve found a bug!
+</div>
+
+---
+
+<div class="footer">
+  <div class="contributors">
+    <h2>Contributors</h2>
+    <div class = "names">
+    Sally Johnson | Jaee Oh | Alex Corcoran
+    </div>
   </div>
 </div>
 
@@ -85,7 +93,7 @@ Here are some ideas of things you could try…
   font-size: 14vw;
   font-weight: 900;
   line-height: 1;
-  color: black;
+  color: 708090;
 }
 
 .hero h2 {
@@ -98,6 +106,24 @@ Here are some ideas of things you could try…
   color: var(--theme-foreground-muted);
 }
 
+.contributors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--sans-serif);
+  text-wrap: balance;
+  text-align: center;
+}
+.contributors .names{
+  margin: 0;
+  font-size: 18px;
+  font-style: initial;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  line-height: 1.5;
+  color: var(--theme-foreground-muted);
+
+}
 @media (min-width: 640px) {
   .hero h1 {
     font-size: 75px;

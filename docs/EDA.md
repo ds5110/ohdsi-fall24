@@ -266,7 +266,7 @@ There are 16 types of discharge types for stroke patients with no aphasia
 ```
 make plot_speech_therapy_aphasia
 ```
-<img src="../figs/speech_therapy_aphasia.png" width=900>
+<img src="../figs/speech_therapy_aphasia.png" width=600>
 
 - Patients with aphasia require more speech therapies in average, which is an expected result.
 

@@ -28,10 +28,10 @@ Steps include:
 
 ## Step 1: Create intermediate tables
 
-We will create various intermediate tables in your own schema. This is done because directly using tables in 'omop_cdm_53_pmtx_202203' schema, which is the original data, everytime an analysis is performed is extremely slow, since the number of data points in those tables are in a scale of billion. We will use the stroke cohort definition created by Casey Tilton as an index table to filter out any relevant tables from the omop schema and write them into your work schema. As a result, you will be working on tables that are in a scale of million in maximum. Run following command on your Anaconda PowerShell Prompt. Make sure you are at your  directory which cloned this repo:
+We will create various intermediate tables in your own schema. This is done because directly using tables in 'omop_cdm_53_pmtx_202203' schema, which is the original data, every time an analysis is performed is extremely slow, since the number of data points in those tables are on a scale of billions. We will use the stroke cohort definition created by Casey Tilton as an index table to filter out any relevant (stroke diagnosis) person_IDs from the omop schema into a table written into your work schema. As a result, you will be working on tables that are on a maximum size of a million data points in maximum. Run the following command on your Anaconda PowerShell Prompt. Make sure you are at your directory which cloned this repo:
 
 ```
- make reate_tables
+ make create_tables
 ```
 
 This command is going to run 11 .py files in a correct order. Each of the .py files correspond to each intermediate table that is created. Notice that some of the intermediate tables will require other intermediate tables to be created first, so the order of running these .py files is very important. Now open DBeaver, and check your work space. You must have following tables in your schema now:
@@ -42,17 +42,17 @@ This command is going to run 11 .py files in a correct order. Each of the .py fi
 
 Note that your Object ID won't match these exactly. Important part is if the Row Count Estimate is the same, and make sure none of them are empty. You can check if the tables are empty by double clicking the table name and check the 'Data' tab.
 
-If you see any error, please refer to the 'Makefile' and try running .py file individually. For example, if you had an error message while 'stroke_ancestor' table is being created, try running following command:
+If you see any error, please refer to the 'Makefile' and try running each .py file individually. For example, if you had an error message while 'stroke_ancestor' table is being created, try running the following command:
 
 ```
 make stroke_ancestor
 ```
 
-This is going to run the 'stroke_ancestor.py' file only, and you can debug by opening the 'stroke_ancestor.py' file and read through the code.
+This is going to run the 'stroke_ancestor.py' file only, and you can debug by opening the 'stroke_ancestor.py' file and reading through the code.
 
 ## Step 2: Plotting
 
-Following make commands can be used in your Anaconda PowerShell Prompt to plot the figures we have in this repo:
+The following make commands can be used in your Anaconda PowerShell Prompt to plot the figures we have in this repo:
 
 ```
 make plot_stroke_desc_concept
@@ -70,7 +70,7 @@ make plot_speech_therapy_aphasia
 
 'make plot_first_discharge' will run 3 .py files, while other commands will only run one .py file at a time.
 
-Make sure that you get same plots as we did in our [EDA](docs/EDA.md).
+Confirm you produce the same plots as we did in our [EDA](docs/EDA.md).
 
 ## Step 3: Analysis of discharge path
 
@@ -87,11 +87,11 @@ This analysis is done very simply to provide a frame of what to work on next reg
 
 1. Did your project objectives change based on what your learned from the data or stakeholder?
 
-   Our objectives changed both as we explored the data and as we met with the stakeholder each week to share our progress. Rob provided insight into the potential ways to access the data we needed for analysis of care pathways. He provided stroke and speech language codes and suggestions for how to determine if a visit could fall under PT vs OT. As our team tested tables and fields in queries, we often ran into dead ends because of missing data.
+   We treated this project as an AGILE endeavor; a waterfall approach would likely have lead to failure at worst, extreme frustration at best.  Our objectives changed both as we explored the data and as we met with the stakeholder, Rob Cavanaugh, each week to share our progress. Rob provided insight into the potential ways to access the data we needed for analysis of care pathways. He provided stroke and speech language codes and suggestions for how to determine if a visit could fall under PT vs OT. Our project team had regular stand-up meetings to discuss blockers, report on progress, and plan next steps.
+   
+3. Were data-access or data processing challenges harder than you anticipated?
 
-2. Were data-access or data processing challenges harder than you anticipated?
-
-   As noted in our [docs/README.md](docs/README.md), there was a learning curve with the complexity of the OHDSI database since the data is drawn from real-world interactions and the schema connections can be hard to navigate without a medical knowledge. A medical condition can have various codes associated with it, and these codes can also change throughout a patient's care timeline.
+   As noted in our [docs/README.md](docs/README.md), there was a learning curve with the complexity of the OHDSI database since the data is drawn from real-world interactions and the schema connections can be hard to navigate without a medical knowledge. A medical condition can have various codes associated with it, and these codes can also change throughout a patient's care timeline.  Gaps in data availability and comprehensiveness were an additional challenge; As our team tested tables and fields in queries, we often ran into dead ends because of missing data, and had to search for alternate paths to acquire necessary data points.  That the database uses OMOP, or the Observational Medical Outcomes Partnership, a common data model (CDM) to standardize healthcare data, was a blessing.  Not every relational databases has clean, consistent linking variables without tidying first.
 
 ## Next Steps  
 

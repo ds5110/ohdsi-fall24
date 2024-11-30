@@ -29,7 +29,7 @@ print(
 
 # Plot 1
 plt.figure(figsize=(12,10))
-sns.histplot(data=df, x="discharge_to_concept_id", color="#2292B5", shrink=0.9)
+sns.histplot(data=df, x="discharge_to_concept_id", color="#92C8DB", shrink=0.9)
 plt.xticks(rotation=90)
 plt.xlabel("Discharge to Concept Id", fontsize=14, labelpad=20)
 plt.ylabel("Count", fontsize=14, labelpad=20)

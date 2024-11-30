@@ -18,6 +18,7 @@ JOIN {work_schema}.{work_table_2} sc
 """
 
 df = read_df(con, query)
+colors = ['#2292B5', '#001349']
 
 print(df.info())
 print(df)
@@ -30,15 +31,19 @@ cnt_patient_aphasia_true = len(df_aphasia_true)
 cnt_patient_aphasia_false = len(df_aphasia_false)
 
 # Plot.
+
+
 fig, ax = plt.subplots()
 plt.bar(
     ["Has Aphasia", "No Aphasia"],
     [
         cnt_visit_aphasia_true / cnt_patient_aphasia_true,
         cnt_visit_aphasia_false / cnt_patient_aphasia_false,
-    ],
+    ], color=colors
 )
+plt.xlabel("Aphasia Status", fontsize=12, labelpad=15)
 plt.ylabel("Total visits of speech therapy per person", fontsize=12, labelpad=15)
+plt.title("Speech Therapy Visits Based on Aphasia Status", fontsize=14, weight="bold", pad=20)
 plt.tight_layout()
 plt.savefig("figs/speech_therapy_aphasia.png")
 plt.show()

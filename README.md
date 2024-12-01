@@ -28,7 +28,7 @@ Steps include:
 
 ## Step 1: Create intermediate tables
 
-We will create various intermediate tables in your own schema. This is done because directly using tables in 'omop_cdm_53_pmtx_202203' schema, which is the original data. Every time that an analysis is performed is extremely slow, since the number of data points in those tables are on a scale of billions. We will use the stroke cohort definition created by Casey Tilton as an index table to filter out any relevant (stroke diagnosis) person_IDs from the omop schema into a table written into your work schema. As a result, you will be working on tables that are on a maximum size of a million data points in maximum. Run the following command on your Anaconda PowerShell Prompt. Make sure you are at your directory which cloned this repo:
+We will create various intermediate tables in your own schema. This is done because directly using tables in 'omop_cdm_53_pmtx_202203' schema, which is the original data. Every time that an analysis is performed is extremely slow, since the number of data points in those tables are on a scale of billions. We will use the stroke cohort definition created by Casey Tilton as an index table to filter out any relevant (stroke diagnosis) person_IDs from the omop schema into a table written into your work schema. As a result, you will be working on tables that are on a scale of a million data points in maximum. Run the following command on your Anaconda PowerShell Prompt. Make sure you are at your directory which cloned this repo:
 
 ```
  make create_tables

@@ -1,9 +1,10 @@
 # Tutorial for OHDSI database access with python
 ## Intro
 * This is a step by step tutorial to setup a safe environment to access OHDSI redshift database using python.
+* Working with this repo requires some basic knowledges on python and SQL. If you are not familiar with them, there are many tutorials you can find to learn, such as [this python tutorial](https://www.w3schools.com/python/) and [this SQL tutorial](https://www.w3schools.com/sql/). There are also many useful [Pandas tutorials](https://www.w3schools.com/python/pandas/pandas_intro.asp). Make sure to familiarize yourself with Pandas package of python, since it is widely used for data processing.
 * There is also a [git repo](https://github.com/aws/amazon-redshift-python-driver/tree/master) from AWS where you can find a tutorial from AWS. This includes more general cases than ours such as using different Identity Provider plugins, using Numpy instead of Pandas, etc.
 * Processing data with SQL is fater. Recommend using SQL when you have larger tables.
-* Processing data with pandas dataframe is slower, but more intuitive and readable. Recommend using python Pandas dataframe when your tables are smaller, and when you are doing the analysis such as plotting.
+* Processing data with pandas dataframe is slower, but more intuitive and readable. Recommend using python Pandas dataframe when your tables are smaller, and when you are doing analysis and visualization such as plotting.
 * [DBeaver](https://dbeaver.com/docs/dbeaver/) is a GUI for the OHDSI database, which is a nice visualization tool. You can also run SQL on your schema with DBeaver too, if you prefer DBeaver over python to simply create/read tables from the database.
 
 ## AWS Setup

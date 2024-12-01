@@ -275,6 +275,44 @@ make plot_speech_therapy_aphasia
 ```
 make analysis_visit_oc_5_discharge
 ```
+- The command window will show following after above command:
+```
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 67119 entries, 0 to 67118
+Data columns (total 21 columns):
+ #   Column                     Non-Null Count  Dtype
+---  ------                     --------------  -----
+ 0   person_id                  67119 non-null  int64
+ 1   visit_start_date_1         67119 non-null  object
+ 2   visit_source_concept_id_1  67119 non-null  object
+ 3   visit_end_date_1           67119 non-null  datetime64[ns]
+ 4   discharge_to_concept_id_1  67119 non-null  object
+ 5   visit_start_date_2         66873 non-null  object
+ 6   visit_source_concept_id_2  66873 non-null  object
+ 7   visit_end_date_2           66873 non-null  datetime64[ns]
+ 8   discharge_to_concept_id_2  66873 non-null  object
+ 9   visit_start_date_3         66606 non-null  object
+ 10  visit_source_concept_id_3  66606 non-null  object
+ 11  visit_end_date_3           66606 non-null  datetime64[ns]
+ 12  discharge_to_concept_id_3  66606 non-null  object
+ 13  visit_start_date_4         66258 non-null  object
+ 14  visit_source_concept_id_4  66258 non-null  object
+ 15  visit_end_date_4           66258 non-null  datetime64[ns]
+ 16  discharge_to_concept_id_4  66258 non-null  object
+ 17  visit_start_date_5         65840 non-null  object
+ 18  visit_source_concept_id_5  65840 non-null  object
+ 19  visit_end_date_5           65840 non-null  datetime64[ns]
+ 20  discharge_to_concept_id_5  65840 non-null  object
+dtypes: datetime64[ns](5), int64(1), object(15)
+```
+
+- Number of patients discharge to the first place: 67,119
+- Number of patients discharge to the second place: 66,873
+- Number of patients discharge to the third place: 66,606
+- Number of patients discharge to the fourth place: 66,258
+- Number of patients discharge to the fifth place: 65,840
+- As expected, the number of patients reduces as they discharge further.
+- More detailed information of each patients on each discharge can be found by accessing each data point within the pandas dataframe that has been read in this source file.
 
 # Further Proposal Notes
 

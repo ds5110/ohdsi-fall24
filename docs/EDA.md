@@ -27,7 +27,7 @@
 make plot_stroke_desc_concept
 ```
 
-- The info of Pandas dataframe of 'stroke_cohort_w_aphasia' is following:
+- The info of Pandas dataframe,'stroke_cohort_w_aphasia', is the following:
 
 ```
 <class 'pandas.core.frame.DataFrame'>
@@ -51,6 +51,7 @@ dtypes: int64(6), object(4)
 - The number of data points are reduced to 67,128, since we are only looking into datapoints that are 'inpatient' and 'strokes'. This is much manageable size of data now.
 
 - You will also see every descendant concept ID in this dataframe in the command window:
+
 ```
 Descendant concept ID in the stroke cohort is:
 [ 4017107   443454  4134162  4176892  4110192 43530674  4148906 43530727
@@ -60,24 +61,23 @@ Descendant concept ID in the stroke cohort is:
    437106 37016924   260841 40479572  4048277  4111708  4111717  4112023
   4045738   444196  4108952  4046360   436430  4111714   434155 46273649
   4045737  4345688]
-  ```
-  - You can check if they are all stroke related codes.
+```
 
-<br>
+- You can check if they are all stroke related codes.
+
 <img src="../figs/stroke_desc_concept_id.png" width=900>
-<br>
 
 - The plot shows that '443454' code, which is Cerebral infarction, is the most common case.
 - There are many other 'condition_concept_id' in here, which are more specific disease codes within the 7 strokes.
   <br>
-  <br>
-
-- Run following command to get a figures to show the rate of aphasia in 'stroke_cohort_w_aphasia':
+- Run the following command to get a figures to show the rate of aphasia in 'stroke_cohort_w_aphasia':
 
 ```
 make plot_has_aphasia
 ```
-- Following info will be shown in the command window:
+
+- The following info will be shown in the command window:
+
 ```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 67128 entries, 0 to 67127
@@ -96,6 +96,7 @@ Data columns (total 10 columns):
  9   has_aphasia                    67128 non-null  int64
 dtypes: int64(6), object(4)
 ```
+
 <br>
 <img src="../figs/aphasia_dist.png" width=600>
 <br>
@@ -104,11 +105,14 @@ dtypes: int64(6), object(4)
   <br>
   <br>
 
-- Run following command to get information and figures for the 7 stroke types of stroke cohorts with aphasia:
+- Run following command to get information and figures for the 7 stroke types of the stroke cohort with aphasia:
+
 ```
 make plot_stroke_type_aphasia_TRUE
 ```
+
 - Following info will be shown in the command window:
+
 ```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 12388 entries, 0 to 12387
@@ -131,21 +135,25 @@ Data columns (total 14 columns):
  13  max_levels_of_separation       12388 non-null  int64
 dtypes: int64(10), object(4)
 ```
+
 - As you can see, there are 12,388 stroke patients with aphasia.
-<br>
-<img src="../figs/stroke_type_aphasia_TRUE.png" width=900>
-<br>
+  <br>
+  <br>
+  <img src="../figs/stroke_type_aphasia_TRUE.png" width=900>
+  <br>
 
-- As you can see '443454' code, which is Cerebral infarction, is the most common case. One of the stroke code is not present.
+- As you can see, the '443454' code, which is Cerebral infarction, is the most common case. One of the stroke codes is not present.
   <br>
   <br>
 
-- Run following command to get information and figures for the 7 stroke types of stroke cohorts with no aphasia:
+- Run following command to get information and figures for the 7 stroke types of the stroke cohort with no aphasia:
 
 ```
 make plot_stroke_type_aphasia_FALSE
 ```
-- Following info will be shown in the command window:
+
+- The following info will be shown in the command window:
+
 ```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 63820 entries, 0 to 63819
@@ -168,21 +176,25 @@ Data columns (total 14 columns):
  13  max_levels_of_separation       63820 non-null  int64
 dtypes: int64(10), object(4)
 ```
+
 - As you can see, there are 63,819 stroke patients with aphasia.
-<br>
-<img src="../figs/stroke_type_aphasia_FALSE.png" width=900>
-<br>
-- As you can see '443454' code, which is Cerebral infarction, is still the most common case. One of the stroke is not present. One of the stroke code is still not present.
+  <br>
+  <img src="../figs/stroke_type_aphasia_FALSE.png" width=900>
+  <br>
+- As you can see, the '443454' code, which is Cerebral infarction, is still the most common case. One of the stroke codes is still not present.
   <br>
   <br>
 
 ## Analysis of discharge paths related to aphasia
 
-- Run following command to get a plot of types of the first discharge paths for all stroke patients and with or without aphasia:
+- Run following command to get a plot of types of the first discharge paths for all stroke patients, with or without aphasia:
+
 ```
 make plot_first_discharge
 ```
+
 - This command will create 3 plots at a time. You have to close the window for a plot for the next .py file to be run. The command window will display following:
+
 ```
 python -B src/plot_first_discharge.py
 Connection is created. Your work schema is 'work_oh_jaee211'
@@ -240,6 +252,7 @@ First discharge concept IDs are: ['1: Home' '1: Home Health Agency' '1: Home Vis
  '5: Psychiatric Hospital']
 There are 16 types of discharge types for stroke patients with no aphasia
 ```
+
 - As you can see there are total of 16 discharge types for stroke patients. Discharge to 'Prison/Correctional Facility' was not present within stroke patients with aphasia.
 
 <img src="../figs/first_discharge.png" width=900>
@@ -248,34 +261,38 @@ There are 16 types of discharge types for stroke patients with no aphasia
 - 'Skilled Nursing Facility' and 'Rehavilitation Hospital' were the next most common discharge path for the stroke patients.
 - Other discharge paths are not likely to be the first discharge paths.
 
-**Plots with Aphasia**
 <img src="../figs/first_discharge_aphasia_TRUE.png" width=900>
 <img src="../figs/first_discharge_aphasia_TRUE_grouped.png" width=500>
 <br>
 <br>
-**Plots with No Aphasia**
+<br>
 <img src="../figs/first_discharge_aphasia_FALSE.png" width=900>
 <img src="../figs/first_discharge_aphasia_FALSE_grouped.png" width=500>
 
 - Patients who were discharged to 'Inpatient Hospital' mostly had aphasia.
 - Patients with aphasia are more likely to be discharged to 'Skilled Nursing Facility' and 'Rehavilitation Hospital' after the first stroke event.
-- Patients with no aphasia have higher rate of returning home after the first stroke event.
+- Patients with no aphasia have a higher rate of returning home after the first stroke event.
 
+- Run the following command to get a plot of total visits of speech therapy per person of stroke patients with or without aphasia:
 
-- Run following command to get a plot of total visits of speech therapy per person of stroke patients with or without aphasia:
 ```
 make plot_speech_therapy_aphasia
 ```
-<img src="../figs/speech_therapy_aphasia.png" width=600>
+
+<img src="../figs/speech_therapy_aphasia.png" width=700>
 
 - Patients with aphasia require more speech therapies in average, which is an expected result.
 
 ## Analysis of discharge paths
-- Following command will run an analysis of first 5 discharge paths:
+
+- The following command will run an analysis of the first 5 discharge paths:
+
 ```
 make analysis_visit_oc_5_discharge
 ```
-- The command window will show following after above command:
+
+- The command window will show the following after the above command:
+
 ```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 67119 entries, 0 to 67118
@@ -312,7 +329,7 @@ dtypes: datetime64[ns](5), int64(1), object(15)
 - Number of patients discharge to the fourth place: 66,258
 - Number of patients discharge to the fifth place: 65,840
 - As expected, the number of patients reduces as they discharge further.
-- More detailed information of each patients on each discharge can be found by accessing each data point within the pandas dataframe that has been read in this source file.
+- More detailed information of each patient on each discharge can be found by accessing each data point within the pandas dataframe that has been read in this source file.
 
 # Further Proposal Notes
 
@@ -350,7 +367,7 @@ Note that further investigations may find that the following additional, low inc
 - Physical and occupational therapy
 - Speech therapy
 - Combination of physical, occupational, and speech therapy
-  
+
 At this point, there will be the following initial paths:
 
 - Type of stroke (7 separate groups including dependencies)
@@ -368,7 +385,6 @@ Potential further path tracing beyond 147 groups, dependent on sample size in gr
 - Total duration of treatment from initial stroke diagnosis to final stroke-related therapy (measured in days)
 
 <br>
-
 
 # Background
 

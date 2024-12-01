@@ -1,5 +1,9 @@
+# SQL code for Stroke Cohort by Casey Tilton
+
 The following sql code was created by Casey Tilton, a Capstone student also working on the OHDSI stroke project.  We are using this as our cohort definition as we develop the paths that are taken by different stroke patients, based on data available within the OHDSI lab.
 
+This code creates an intermediate table 'inpatient_stroke':
+```
 -creating an intermediate table for all condition occurrences that match the stroke-related concept ids for inpatient visits
 
 select co.condition_occurrence_id, co.person_id, co.condition_concept_id, co.condition_start_date, co.condition_end_date
@@ -21,7 +25,10 @@ inner join omop_cdm_53_pmtx_202203.concept c on
 ca.descendant_concept_id = c.concept_id 
 where ancestor_concept_id IN (372924,375557,376713,443454,441874,439847,432923) -- stroke occurrence codes and all descendants
 );
+```
 
+This code creates an intermediate table 'stroke_cohort_w_aphasia':
+```
 -- creating a cohort with aphasia indicator
 with first_stroke_occurrence as 
 (
@@ -117,3 +124,4 @@ select sc.*, ai.has_aphasia into work_tilton_ca204.stroke_cohort_w_aphasia --wri
 from stroke_cohort sc
 left join aphasia_indicator ai 
   on sc.person_id = ai.person_id;
+```

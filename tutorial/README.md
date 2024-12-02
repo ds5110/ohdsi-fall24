@@ -13,9 +13,9 @@
 
 Begin by reading the [OHDSI Lab User Guide](https://northeastern.sharepoint.com/sites/OHDSINortheastern/Shared%20Documents/Forms/AllItems.aspx?ct=1730181131359&or=OWA%2DNT%2DMail&cid=53292a02%2Da869%2D233d%2D6d85%2D6b3f16dcddb5&ga=1&id=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FUser%20Guide%2FLatest%2FOHDSI%20LAB%20User%20Guide%2Epdf&viewid=e9534233%2D4089%2D42ed%2D8956%2D298feac7e723&parent=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FUser%20Guide%2FLatest). There are several mandatory steps to complete before the AWS setup can begin, such as:
 
-- Setting up the VPN for secure access
-- Logging into [OHDSI Lab Dashboard](https://ohdsi-lab.roux-ohdsi-prod.aws.northeastern.edu/#/login). (Requires VPN if logging in off of campus.)
-- Filling out the New User [onbarding form](https://docs.google.com/forms/d/e/1FAIpQLSdKNll_-mHZ14XZm6gyi8SmanMS5dOZRzqnEf0xwwvgCTc_Bg/viewform). This includes completing several CITI Certifications specified within the onboarding form. The courses must be finished and the completion certificates must be uploaded in order to submit the onboarding form and to gain access to an Amazon Workspace to work with the OHDSI database.
+- Set up the VPN for secure access.
+- Log into [OHDSI Lab Dashboard](https://ohdsi-lab.roux-ohdsi-prod.aws.northeastern.edu/#/login). (Requires VPN if logging in off of campus.)
+- Fill out the New User [onbarding form](https://docs.google.com/forms/d/e/1FAIpQLSdKNll_-mHZ14XZm6gyi8SmanMS5dOZRzqnEf0xwwvgCTc_Bg/viewform). This includes completing several CITI Certifications specified within the onboarding form. The courses must be finished and the completion certificates must be uploaded in order to submit the onboarding form and to gain access to an Amazon Workspace to work with the OHDSI database.
 
   <br>
 

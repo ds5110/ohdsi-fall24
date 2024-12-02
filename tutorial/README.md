@@ -15,7 +15,7 @@ Begin by reading the [OHDSI Lab User Guide](https://northeastern.sharepoint.com/
 
 - Set up the VPN for secure access.
 - Log into [OHDSI Lab Dashboard](https://ohdsi-lab.roux-ohdsi-prod.aws.northeastern.edu/#/login). (Requires VPN if logging in off of campus.)
-- Fill out the New User [onbarding form](https://docs.google.com/forms/d/e/1FAIpQLSdKNll_-mHZ14XZm6gyi8SmanMS5dOZRzqnEf0xwwvgCTc_Bg/viewform). This includes completing several CITI Certifications specified within the onboarding form. The courses must be finished and the completion certificates must be uploaded in order to submit the onboarding form and to gain access to an Amazon Workspace to work with the OHDSI database.
+- Fill out the new user [onboarding form](https://docs.google.com/forms/d/e/1FAIpQLSdKNll_-mHZ14XZm6gyi8SmanMS5dOZRzqnEf0xwwvgCTc_Bg/viewform). This includes completing several CITI Certifications specified within the onboarding form. The courses must be finished and the completion certificates must be uploaded in order to submit the onboarding form and to gain access to an Amazon Workspace to work with the OHDSI database.
 
   <br>
 

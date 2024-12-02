@@ -19,7 +19,7 @@ Begin by reading the [OHDSI Lab User Guide](https://northeastern.sharepoint.com/
 
   <br>
 
-_A summarized version of the OHDSI User Guide is also available [here](2Epdf&viewid=e9534233-4089-42ed-8956-298feac7e723&parent=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20-%20User%20Group%2FOnboardingavailable)._
+_A summarized version of the OHDSI User Guide is also available [here](https://northeastern.sharepoint.com/sites/OHDSINortheastern/Shared%20Documents/Forms/AllItems.aspx?ga=1&OR=Teams%2DHL&CT=1733161198224&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI1MC8yNDEwMjAwMTMxOCIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D&id=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FOnboarding%2FOHDSI%20Lab%20Onboarding%20Guide%5FInternal%20User%5FV1%2E0%5F04Jan2024%2Epdf&viewid=e9534233%2D4089%2D42ed%2D8956%2D298feac7e723&parent=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FOnboarding)._
 
 ## AWS Setup
 

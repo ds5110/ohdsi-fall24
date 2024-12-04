@@ -46,6 +46,17 @@ plt.tight_layout()
 plt.savefig("figs/first_discharge.png", bbox_inches="tight")
 plt.show()
 
+# Plot 1.5 - fig to include in presentation slide
+'''plt.figure(figsize=(14,12))
+sns.histplot(data=df, x="discharge_to_concept_id", color="#92C8DB", shrink=0.9)
+plt.xticks(rotation=45, ha="right")
+plt.xlabel("Discharge to Concept Id", fontsize=14, labelpad=20, weight="bold")
+plt.ylabel("Count", fontsize=14, labelpad=20, weight="bold")
+plt.title("First discharge paths of all stroke patients", fontsize=16, weight="bold", pad=15, loc="center")
+plt.tight_layout()
+plt.savefig("figs/first_discharge_pres.png", bbox_inches="tight")
+plt.show()'''
+
 # Plot 2 - Grouped
 plt.figure(figsize=(10,10))
 sns.histplot(data=df, x="discharge_grouped", hue="discharge_grouped", palette="ocean", shrink=0.9)

@@ -331,6 +331,21 @@ dtypes: datetime64[ns](5), int64(1), object(15)
 - As expected, the number of patients reduces as they discharge further.
 - More detailed information of each patient on each discharge can be found by accessing each data point within the pandas dataframe that has been read in this source file.
 
+## Test analysis of visit discharge.
+
+- The following command will run a test analysis of the first 5 discharge paths, and create 'visit_n' and 'at_home' dataframes:
+
+```
+make test_visit_and_home_df
+```
+
+- 'at_home' dataframe acts as a bucket to separate out patients who were discharged to home, and therefore removed for further discharge paths.
+- Checking shapes of 'visit_n' datafranes tell us that number of patients are changing on each discharge paths as following:
+  - 67119 -> 1704 -> 1926 -> 2004 -> 1925
+  - As it can be seen, the number of patients are not decreasing consecutively as the patients discharge further. This may need further investigation to explain whether it is an actual phenomenon or a problem related to the database format.
+- The resultant dataframes have 'discharge_to_previous' column, which tells what was the previous discharge visit type. This can be used for further investigation of discharge paths. 
+
+
 # Further Proposal Notes
 
 Our project will establish stroke patient ‘paths’ through treatment, to further disaggregate the initial cohort definition that captures first-occurance in-patient and emergency department stroke diagnosis. We will focus our path on physical location of patients after inpatient discharge, and indication of whether they have received physical/occupational and/or speech therapy. The objective is to create defined paths that will support future research on the efficacy of different treatment processes, location, and duration.

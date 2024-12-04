@@ -71,6 +71,10 @@ plot_speech_therapy_aphasia:
 analysis_visit_oc_5_discharge:
 	python -B src/analysis_visit_oc_5_discharge.py
 
+# Test analysis of visit discharge.
+test_visit_and_home_df:
+	python -B src/test_visit_and_home_df.py
+
 # Utility.
 drop_table:
 	python -B src/drop_table.py

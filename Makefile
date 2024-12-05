@@ -67,6 +67,9 @@ plot_first_discharge:
 plot_speech_therapy_aphasia:
 	python -B src/plot_speech_therapy_aphasia.py
 
+plot_visits_2345:
+	python -B src/plot_visits_2345.py
+
 # Analysis of first 5 discharges.
 analysis_visit_oc_5_discharge:
 	python -B src/analysis_visit_oc_5_discharge.py

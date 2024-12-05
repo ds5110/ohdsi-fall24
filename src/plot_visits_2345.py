@@ -41,7 +41,7 @@ def plot_visit_data(df, title, ax):
     category_counts = category_counts.reindex(grouped_categories, fill_value=0)
     
     # Create the bar plot
-    #sns.barplot(x=category_counts.index, y=category_counts.values, palette="tabl0", ax=ax)
+    #sns.barplot(x=category_counts.index, y=category_counts.values, palette="ocean", ax=ax)
     sns.barplot(x=category_counts.index, y=category_counts.values, hue=category_counts.index, palette="ocean", alpha=0.7, legend=False, ax=ax)
     
     # Set title and labels
@@ -61,7 +61,7 @@ plot_visit_data(visit_4, "Location 4", axes[2])
 plot_visit_data(visit_5, "Location 5", axes[3])
 
 # Adjust layout and display the plots
-fig.suptitle("Locations", fontsize=16, weight="heavy", x=0.55)
+fig.suptitle("Discharge Locations", fontsize=16, weight="heavy", x=0.55)
 plt.subplots_adjust(left=0.2, right=1.0, top=.92, wspace=0.4, hspace=0.9)
 #plt.tight_layout()
 plt.savefig("figs/visits_2345.png", bbox_inches="tight")

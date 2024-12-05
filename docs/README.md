@@ -2,11 +2,13 @@
 
 Below are our results from working with the OHDSI database to determine care pathways for patients after their initial stroke. DS5110 Fall 2024
 
-## Major Findings - Delivering an Intermim Step
+## Major Findings
 
 - Stroke patients with aphasia can be identified.
 - Different locations post-acute care, with dates attached, can be tracked for individual patients.
 - Speech therapy procedure occurrences, with dates, can be appended to patient records.
+
+## Delivering an Intermim Step
 
 ### 1. Establish Cohort
 

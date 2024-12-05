@@ -343,8 +343,7 @@ make test_visit_and_home_df
 - Checking shapes of 'visit_n' datafranes tell us that number of patients are changing on each discharge paths as following:
   - 67119 -> 1704 -> 1926 -> 2004 -> 1925
   - As it can be seen, the number of patients are not decreasing consecutively as the patients discharge further. This may need further investigation to explain whether it is an actual phenomenon or a problem related to the database format.
-- The resultant dataframes have 'discharge_to_previous' column, which tells what was the previous discharge visit type. This can be used for further investigation of discharge paths. 
-
+- The resultant dataframes have 'discharge_to_previous' column, which tells what was the previous discharge visit type. This can be used for further investigation of discharge paths.
 
 # Further Proposal Notes
 
@@ -413,3 +412,10 @@ Potential further path tracing beyond 147 groups, dependent on sample size in gr
 **Our edited version of the ER diagram based on the current Cohort Query (inpatient_stroke):**
 
 <img src="img/cohort_er_diagram.png" width=500>
+
+<br>
+<br>
+
+**Diagram constructed to visualize categories for discharge_to_concept_id/name:** <br>
+_(Buckets determined by Rob and Casey)_
+<img src="img/facility_category.png" width=500>

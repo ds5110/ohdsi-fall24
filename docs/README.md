@@ -1,12 +1,48 @@
 # Identification of Patterns in Stroke Care Transitions, using [OHDSI](https://ohdsi.northeastern.edu/) Pharmetrics+ data
 
-#### Front-facing high level description md
-
-#### (should present same info as our presentation)
-
-results from working with OHDDSI to determine care pathways for patients after their initial stroke. DS5110 Fall 2024
+Our results from working with OHDSI to determine care pathways for patients after their initial stroke. DS5110 Fall 2024
 
 ## Major Findings
+
+- Stroke patients with aphasia can be identified.
+- Different locations post-acute care, with dates attached, can be tracked for individual patients.
+- Speech therapy procedure occurrences, with dates, can be appended to patient records.
+
+### 1. Establish Cohort
+
+<img src="../docs/img/db_to_cohort.png" width=500>
+
+### 2. Append Aphasia Diagnosis
+
+<img src="../figs/aphasia_dist.png" width=500>
+
+### 3.1 First Discharge Path for All Cohort Patients
+
+<img src="../figs/first_discharge.png" width=700>
+
+### 3.2 Categories for Discharge Facilities - All
+
+<img src="../figs/first_discharge_grouped.png" width=700>
+
+### 3.3 Categories for Discharge Facilities - No Aphasia vs Aphasia
+
+### No Aphasia
+
+<img src="../figs/first_discharge_aphasia_FALSE_grouped.png" width=500>
+
+<br>
+
+### Has Aphasia
+
+<img src="../figs/first_discharge_aphasia_True_grouped.png" width=500>
+
+### 4 Discharge from Locations (2, 3, 4, 5)
+
+<img src="../figs/visits_2345.png" width=700>
+
+### 5 Speech Therapy
+
+<img src="../figs/speech_therapy_aphasia.png" width=500>
 
 ## Challenges
 

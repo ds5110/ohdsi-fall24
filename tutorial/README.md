@@ -5,28 +5,34 @@
 - This is a step by step tutorial to setup a safe environment to access OHDSI redshift database using python.
 - Working with this repo requires some basic knowledges on python and SQL. If you are not familiar with them, there are many tutorials you can find to learn, such as [this python tutorial](https://www.w3schools.com/python/) and [this SQL tutorial](https://www.w3schools.com/sql/). There are also many useful [Pandas tutorials](https://www.w3schools.com/python/pandas/pandas_intro.asp). Make sure to familiarize yourself with Pandas package of python, since it is widely used for data processing.
 - There is also a [git repo](https://github.com/aws/amazon-redshift-python-driver/tree/master) from AWS where you can find a tutorial from AWS. This includes more general cases than ours such as using different Identity Provider plugins, using Numpy instead of Pandas, etc.
-- Processing data with SQL is fater. Recommend using SQL when you have larger tables.
+- Processing data with SQL is faster. Recommend using SQL when you have larger tables.
 - Processing data with pandas dataframe is slower, but more intuitive and readable. Recommend using python Pandas dataframe when your tables are smaller, and when you are doing analysis and visualization such as plotting.
 - [DBeaver](https://dbeaver.com/docs/dbeaver/) is a GUI for the OHDSI database, which is a nice visualization tool. You can also run SQL on your schema with DBeaver too, if you prefer DBeaver over python to simply create/read tables from the database.
 
 ## OHDSI at Northeastern University
 
-Begin by reading the [OHDSI Lab User Guide](https://northeastern.sharepoint.com/sites/OHDSINortheastern/Shared%20Documents/Forms/AllItems.aspx?ct=1730181131359&or=OWA%2DNT%2DMail&cid=53292a02%2Da869%2D233d%2D6d85%2D6b3f16dcddb5&ga=1&id=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FUser%20Guide%2FLatest%2FOHDSI%20LAB%20User%20Guide%2Epdf&viewid=e9534233%2D4089%2D42ed%2D8956%2D298feac7e723&parent=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FUser%20Guide%2FLatest). There are several mandatory steps to complete before the AWS setup can begin, such as:
+This tutorial builds on the [OHDSI Lab User Guide](https://northeastern.sharepoint.com/sites/OHDSINortheastern/Shared%20Documents/Forms/AllItems.aspx?ct=1730181131359&or=OWA%2DNT%2DMail&cid=53292a02%2Da869%2D233d%2D6d85%2D6b3f16dcddb5&ga=1&id=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FUser%20Guide%2FLatest%2FOHDSI%20LAB%20User%20Guide%2Epdf&viewid=e9534233%2D4089%2D42ed%2D8956%2D298feac7e723&parent=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FUser%20Guide%2FLatest), which is a detailed and authoritative reference. If you have questions about the steps below, look there first. 
 
-- Set up the VPN for secure access.
-- Log into [OHDSI Lab Dashboard](https://ohdsi-lab.roux-ohdsi-prod.aws.northeastern.edu/#/login). (Requires VPN if logging in off of campus.)
+There are several mandatory steps to complete before the AWS setup can begin:
+
 - Fill out the new user [onboarding form](https://docs.google.com/forms/d/e/1FAIpQLSdKNll_-mHZ14XZm6gyi8SmanMS5dOZRzqnEf0xwwvgCTc_Bg/viewform). This includes completing several CITI certifications specified within the onboarding form. The courses must be finished and the completion certificates must be uploaded in order to submit the onboarding form and to gain access to an Amazon Workspace to work with the OHDSI database.
-- Budget up to a week to complete the CITI certifications and to receive access to the Amazon Workspace.
+- Budget up to a week to complete the CITI certifications and to receive access to the Amazon Workspace, but it might just take a couple days.
+- Set up the VPN for secure access from remote locations (not necessary if you're on campus wifi).
+- Log into [OHDSI Lab Dashboard](https://ohdsi-lab.roux-ohdsi-prod.aws.northeastern.edu/#/login). (Requires VPN if logging in off of campus.)
 
 _A summarized version of the OHDSI User Guide is also available [here](https://northeastern.sharepoint.com/sites/OHDSINortheastern/Shared%20Documents/Forms/AllItems.aspx?ga=1&OR=Teams%2DHL&CT=1733161198224&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI1MC8yNDEwMjAwMTMxOCIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D&id=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FOnboarding%2FOHDSI%20Lab%20Onboarding%20Guide%5FInternal%20User%5FV1%2E0%5F04Jan2024%2Epdf&viewid=e9534233%2D4089%2D42ed%2D8956%2D298feac7e723&parent=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FOnboarding)._
 
 ## AWS Setup
 
-- Follow the [User Guide](https://northeastern.sharepoint.com/sites/OHDSINortheastern/Shared%20Documents/Forms/AllItems.aspx?ct=1730181131359&or=OWA%2DNT%2DMail&cid=53292a02%2Da869%2D233d%2D6d85%2D6b3f16dcddb5&ga=1&id=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FUser%20Guide%2FLatest%2FOHDSI%20LAB%20User%20Guide%2Epdf&viewid=e9534233%2D4089%2D42ed%2D8956%2D298feac7e723&parent=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FUser%20Guide%2FLatest) up to page 24 to setup your AWS. This tutorial is a python version of R tutorial in chapter 12, page 24 on the User Guide.
+In general, follow the [User Guide](https://northeastern.sharepoint.com/sites/OHDSINortheastern/Shared%20Documents/Forms/AllItems.aspx?ct=1730181131359&or=OWA%2DNT%2DMail&cid=53292a02%2Da869%2D233d%2D6d85%2D6b3f16dcddb5&ga=1&id=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FUser%20Guide%2FLatest%2FOHDSI%20LAB%20User%20Guide%2Epdf&viewid=e9534233%2D4089%2D42ed%2D8956%2D298feac7e723&parent=%2Fsites%2FOHDSINortheastern%2FShared%20Documents%2FOHDSI%20Lab%20%2D%20User%20Group%2FUser%20Guide%2FLatest) up to page 24 to setup your AWS. This tutorial is a Python version of R tutorial in chapter 12 (page 24) of the User Guide.
+
 - When creating a workspace, make sure to select both PharMetrics Plus and OMOP CDM SynPUF.
 - Make sure to keep the email with your Redshift credentials that you recieved when making the workspace, since we will need these credentials for any connection.
+  * **Q: Workspace Mode?? (auto stop??)**
+  * **Q: Silver/Gold/Platinum??**
+  * It can take up to 30 minutes the first time you create a workspace.
 - Your operating system on the AWS is Windows Server 2019. You can check this from Settings - System - About.
-- You should use AWS virtual environment, but not use your local machine directly to access the database. Direct access to the database from your local machine is not possible, and even if it was, it is not safe to have raw data stored in your local machine at any time.
+- You should use AWS virtual environment. Do not use your local machine directly to access the database. Direct access to the database from your local machine is not possible, and even if it were, it's not safe to have raw data stored in your local machine at any time.
 
 ## Installation of Miniconda
 
